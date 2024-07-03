@@ -41,6 +41,10 @@ class PagesController extends Controller
         return view('layouts.founder');
     }
 
+    public function showWorkout()
+    {
+        return view('layouts.workout');
+    }
     public function showEvents()
     {
         return view('layouts.events');
@@ -51,13 +55,18 @@ class PagesController extends Controller
         return view('layouts.contact');
     }
 
-    public function showClubs()
+    public function showDojos()
     {
-        return view('layouts.clubs');
+        return view('layouts.dojos');
     }
 
-    public function showWorkout()
+    public function showCertification()
     {
-        return view('layouts.workout');
+        return view('layouts.certification');
+    }
+
+    public function showLogo()
+    {
+        return view('layouts.logo');
     }
 }

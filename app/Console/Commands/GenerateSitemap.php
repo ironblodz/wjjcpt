@@ -48,6 +48,8 @@ class GenerateSitemap extends Command
         $sitemap->add(Url::create($baseUrl . '/events')->setPriority(0.8)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY));
         $sitemap->add(Url::create($baseUrl . '/wjjcgallery')->setPriority(0.8)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY));
         $sitemap->add(Url::create($baseUrl . '/workout')->setPriority(0.8)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY));
+        $sitemap->add(Url::create($baseUrl . '/certification')->setPriority(0.8)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY));
+        $sitemap->add(Url::create($baseUrl . '/logo')->setPriority(0.8)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY));
 
         // Salva o sitemap no arquivo sitemap.xml
         $sitemap->writeToFile(public_path('sitemap.xml'));

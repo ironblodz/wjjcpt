@@ -9,8 +9,8 @@
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                    Start Banner
-                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                Start Banner
+                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <section class="banner-section banner-section-two inner-banner-section bg-overlay-red bg_img"
         data-background="{{ asset('assets/images/spacesamurai.jpg') }}">
         <div class="section-logo-text">
@@ -27,13 +27,13 @@
         </nav>
     </div>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                    End Banner
-                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                End Banner
+                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                    Start Scroll-To-Top
-                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                Start Scroll-To-Top
+                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <a href="#" class="scrollToTop">
         <img src="{{ asset('assets/images/logowhite.png') }}" alt="element">
         <div class="scrollToTop-icon">
@@ -41,13 +41,13 @@
         </div>
     </a>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                    End Scroll-To-Top
-                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                End Scroll-To-Top
+                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                    Start Trainer
-                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                Start Trainer
+                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <section class="trainer-section trainer-details-section ptb-120">
         <div class="container">
             <div class="row justify-content-center align-items-center mb-30-none">
@@ -66,7 +66,8 @@
                             <p>Shodai Soke Adriano Busà 9º Dan é o fundador e diretor técnico internacional da World
                                 Ju-Jitsu Corporation. O estilo ​de Ju-Jitsu que ele codificou é o “Kishidō” - 騎士 道 (O
                                 caminho do Cavaleiro).
-                                Mais tarde, fundou uma empresa dedicada à formação profissional para polícias e militares.
+                                Mais tarde fundou a ANS S.r.l (Agência Nacional de Segurança), uma empresa dedicada à
+                                formação profissional para polícias e militares.
                                 Além de levar adiante a sua ​grande paixão pelo Ju-Jitsu, esta agência é a única empresa em
                                 Itália com certificação de qualidade UNI EN ISO 9001 e ​creditação da Região da Toscana.</p>
 
@@ -76,7 +77,7 @@
                             <p>A sua visão filosófica levou-o a organizar a World Ju-Jitsu Corporation de tal forma que a
                                 todos é dada a oportunidade ​de crescer e melhorar, ao mesmo tempo que ajuda os outros a
                                 fazer o mesmo, uma vez que seguem os mesmos ​princípios. A sua filosofia está contida no
-                                famoso lema dos três mosqueteiros de Alexandre Dumas: “Todos por um e um ​por todos!”
+                                famoso lema dos três mosqueteiros de Alexandre Dumas: “Um por todos e todos por Um!”
                                 convencido da importância de forjar um grupo e fazer com que todos os membros do grupo se
                                 sintam ​orgulhosos.</p>
 
@@ -130,13 +131,13 @@
         </div>
     </section>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                    End Trainer
-                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                End Trainer
+                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                    Start Trainer
-                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                Start Trainer
+                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     < <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ End Trainer ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 

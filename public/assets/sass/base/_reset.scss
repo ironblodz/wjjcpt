@@ -28,7 +28,7 @@ ul{
 blockquote {
 	margin: 0 0 1.3em;
 }
-p { 
+p {
 	margin-bottom: 15px;
 	line-height: $font__line-height-paragraph;
     &:last-child {
@@ -229,6 +229,12 @@ blockquote{
     padding: 120px 0;
     @media only screen and (max-width: 991px){
         padding: 80px 0;
+    }
+}
+.ptb-20{
+    padding: 20px 0;
+    @media only screen and (max-width: 991px){
+        padding: 20px 0;
     }
 }
 .ptb-150{
@@ -468,7 +474,7 @@ blockquote{
 *::-webkit-scrollbar-track {
     -webkit-box-shadow: inset -5px -5px 8px -1px rgba(255, 255, 255, 0.7), 5px 5px 8px -1px rgba(0, 0, 0, 0.065);
     box-shadow: inset -5px -5px 8px -1px rgba(255, 255, 255, 0.7), 5px 5px 8px -1px rgba(0, 0, 0, 0.065);
-    background-color: $bg--gray; 
+    background-color: $bg--gray;
 }
 *::-webkit-scrollbar {
     width: 6px;
@@ -509,7 +515,7 @@ blockquote{
         transform: translate(-50%,-50%);
         display: none;
     }
-} 
+}
 .scrollToTop.active {
     bottom: 30px;
     transform: translateY(0%);

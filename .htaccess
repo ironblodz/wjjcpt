@@ -1,0 +1,27 @@
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+     RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+<Files .env>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Evita o Clickjacking
+Header always append X-Frame-Options DENY
+
+# Previne XSS
+Header set X-XSS-Protection "1; mode=block"
+
+# Força a navegação segura
+Header set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+
+# Protege contra MIME types
+Header set X-Content-Type-Options nosniff

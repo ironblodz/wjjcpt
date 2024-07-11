@@ -2,11 +2,11 @@
 
 @section('title', 'Contacto')
 @section('description', 'Contacte-nos')
-
+@section('canonical', 'https://wjjc.pt/contact')
 @section('content')
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                                                                                                Start Banner
-                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                    Start Banner
+                                                                                                                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <section class="banner-section banner-section-two inner-banner-section bg-overlay-red bg_img"
         data-background="{{ asset('assets/images/spacesamurai.jpg') }}">
         <div class="section-logo-text">
@@ -22,13 +22,13 @@
         </nav>
     </div>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                                                                                                End Banner
-                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                    End Banner
+                                                                                                                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                                                                                                Start Scroll-To-Top
-                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                    Start Scroll-To-Top
+                                                                                                                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <a href="#" class="scrollToTop">
         <img loading="lazy" src="{{ asset('assets/images/logowhite.png') }}" style="width: 100px;" alt="element">
         <div class="scrollToTop-icon">
@@ -36,13 +36,13 @@
         </div>
     </a>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                                                                                                End Scroll-To-Top
-                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                    End Scroll-To-Top
+                                                                                                                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                                                                                                Start Contact-item
-                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                    Start Contact-item
+                                                                                                                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <section class="contact-item-section ptb-120">
         <div class="contact-element-one my-paroller" data-paroller-factor="0.2" data-paroller-type="foreground"
             data-paroller-direction="vertical">
@@ -108,13 +108,13 @@
         </div>
     </section>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                                                                                                End Contact-item
-                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                    End Contact-item
+                                                                                                                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                                                                                                Start Account widget
-                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                    Start Account widget
+                                                                                                                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <section class="account-widget-section account-widget-section-two account-widget-section--style ptb-120">
         <div class="container">
             <div class="row justify-content-center align-items-center mb-60-none">
@@ -210,13 +210,13 @@
         </div>
     </section>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                                                                                                End Account widget
-                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                    End Account widget
+                                                                                                                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                                                                                                Start Map
-                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                    Start Map
+                                                                                                                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <section class="map-section ptb-120">
         <div class="container">
             <div class="row justify-content-center mb-5-none">
@@ -232,7 +232,7 @@
         </div>
     </section>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                                                                                                End Map
-                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                    End Map
+                                                                                                                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 @endsection

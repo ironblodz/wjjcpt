@@ -20,7 +20,9 @@
     <meta property="og:image:height" content="200">
     <meta property="og:url" content="https://wjjc.pt">
     <meta property="og:type" content="website">
-
+    @hasSection('canonical')
+        <link rel="canonical" href="@yield('canonical')">
+    @endif
     <title>@yield('title', __('messages.title'))</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -74,7 +76,18 @@
           ]
         }
         </script>
+    <!-- Google tag (gtag.js) --><!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GE6N71R6VY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-GE6N71R6VY');
+    </script>
 </head>
 
 <body>

@@ -2,7 +2,7 @@
 
 @section('title', 'O Fundador')
 @section('description', 'O Fundador da WJJC')
-
+@section('canonical', 'https://wjjc.pt/founder')
 @section('content')
 
     <section class="banner-section banner-section-two inner-banner-section bg-overlay-red bg_img"

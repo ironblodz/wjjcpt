@@ -2,7 +2,7 @@
 
 @section('title', 'WJJC Logo')
 @section('description', 'WJJC Logo')
-
+@section('canonical', 'https://wjjc.pt/logo')
 @section('content')
 
 
@@ -21,13 +21,13 @@
         </nav>
     </div>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                                                                                                End Banner
-                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                    End Banner
+                                                                                                                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                                                                                                Start Scroll-To-Top
-                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                    Start Scroll-To-Top
+                                                                                                                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <a href="#" class="scrollToTop">
         <img loading="lazy" src="{{ asset('assets/images/logowhite.png') }}" alt="element">
         <div class="scrollToTop-icon">
@@ -41,7 +41,8 @@
                 <div class="col-xl-6 col-lg-8 text-center">
                     <div class="section-header" data-aos="fade-up" data-aos-duration="1200">
                         <h2 class="section-title">{{ __('messages.logo.logo_title') }}
-                            <span>{{ __('messages.logo.logo_title2') }}</span></h2>
+                            <span>{{ __('messages.logo.logo_title2') }}</span>
+                        </h2>
                     </div>
                 </div>
             </div>
@@ -78,17 +79,17 @@
         </div>
     </section>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                                                                                                End Feature
-                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                    End Feature
+                                                                                                                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                                                                                                Start Trainer
-                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                    Start Trainer
+                                                                                                                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                                                                                                End Client
-                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                    End Client
+                                                                                                                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
 

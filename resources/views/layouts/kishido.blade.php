@@ -2,7 +2,7 @@
 
 @section('title', 'Kishido')
 @section('description', 'Kishido Ju-Jitsu da WJJC Portugal')
-
+@section('canonical', 'https://wjjc.pt/kishido')
 @section('content')
 
 
@@ -23,8 +23,8 @@
         </nav>
     </div>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                    Start Scroll-To-Top
-                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                        Start Scroll-To-Top
+                                                                                                                                                                                                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <a href="#" class="scrollToTop">
         <img loading="lazy" src="{{ asset('assets/images/logowhite.png') }}" alt="element">
         <div class="scrollToTop-icon">
@@ -32,13 +32,13 @@
         </div>
     </a>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                    End Scroll-To-Top
-                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                        End Scroll-To-Top
+                                                                                                                                                                                                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
     <!--~~~~~~~~~~~~~
-                                                                                                                                                                                                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                    Start Training
-                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                                                                                                                                                                                        Start Training
+                                                                                                                                                                                                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <section class="training-section training-section--style training-details-section ptb-120">
         <div class="container">
             <div class="row justify-content-center mb-10-none" data-aos="fade-up" data-aos-duration="1200">
@@ -71,7 +71,8 @@
                                                     <div class="feature-item">
                                                         <div class="feature-icon-area">
                                                             <div class="feature-icon">
-                                                                <img loading="lazy" src="assets/images/icon/icon-56.png" alt="icon">
+                                                                <img loading="lazy" src="assets/images/icon/icon-56.png"
+                                                                    alt="icon">
                                                             </div>
                                                         </div>
                                                         <div class="feature-content">
@@ -85,7 +86,8 @@
                                                     <div class="feature-item">
                                                         <div class="feature-icon-area">
                                                             <div class="feature-icon">
-                                                                <img loading="lazy" src="assets/images/icon/icon-57.png" alt="icon">
+                                                                <img loading="lazy" src="assets/images/icon/icon-57.png"
+                                                                    alt="icon">
                                                             </div>
                                                         </div>
                                                         <div class="feature-content">
@@ -100,7 +102,8 @@
                                                     <div class="feature-item">
                                                         <div class="feature-icon-area">
                                                             <div class="feature-icon">
-                                                                <img loading="lazy" src="assets/images/icon/icon-58.png" alt="icon">
+                                                                <img loading="lazy" src="assets/images/icon/icon-58.png"
+                                                                    alt="icon">
                                                             </div>
                                                         </div>
                                                         <div class="feature-content">
@@ -114,7 +117,8 @@
                                                     <div class="feature-item">
                                                         <div class="feature-icon-area">
                                                             <div class="feature-icon">
-                                                                <img loading="lazy" src="assets/images/icon/icon-59.png" alt="icon">
+                                                                <img loading="lazy" src="assets/images/icon/icon-59.png"
+                                                                    alt="icon">
                                                             </div>
                                                         </div>
                                                         <div class="feature-content">
@@ -128,7 +132,8 @@
                                                     <div class="feature-item">
                                                         <div class="feature-icon-area">
                                                             <div class="feature-icon">
-                                                                <img loading="lazy" src="assets/images/icon/icon-60.png" alt="icon">
+                                                                <img loading="lazy" src="assets/images/icon/icon-60.png"
+                                                                    alt="icon">
                                                             </div>
                                                         </div>
                                                         <div class="feature-content">
@@ -143,7 +148,8 @@
                                                     <div class="feature-item">
                                                         <div class="feature-icon-area">
                                                             <div class="feature-icon">
-                                                                <img loading="lazy" src="assets/images/icon/icon-61.png" alt="icon">
+                                                                <img loading="lazy" src="assets/images/icon/icon-61.png"
+                                                                    alt="icon">
                                                             </div>
                                                         </div>
                                                         <div class="feature-content">

@@ -9,8 +9,8 @@
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                    Start Banner
-                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                            Start Banner
+                                                                                                                                                                                                                                                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <section class="banner-section banner-section-two inner-banner-section bg-overlay-red bg_img"
         data-background="{{ asset('assets/images/spacesamurai.jpg') }}">
         <div class="section-logo-text">
@@ -21,38 +21,40 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">WJJC</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Galeria</li>
+                <li class="breadcrumb-item active" aria-current="page">{{ __('messages.workout.gallery') }}</li>
             </ol>
         </nav>
     </div>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                    End Banner
-                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                            End Banner
+                                                                                                                                                                                                                                                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                    Start Scroll-To-Top
-                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                            Start Scroll-To-Top
+                                                                                                                                                                                                                                                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <a href="#" class="scrollToTop">
-        <img src="{{ asset('assets/images/logowhite.png') }}" alt="element">
+        <img loading="lazy" src="{{ asset('assets/images/logowhite.png') }}" alt="element">
         <div class="scrollToTop-icon">
             <i class="fas fa-arrow-up"></i>
         </div>
     </a>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                    End Scroll-To-Top
-                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                            End Scroll-To-Top
+                                                                                                                                                                                                                                                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                    Start Gallery
-                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                            Start Gallery
+                                                                                                                                                                                                                                                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <section class="gallery-section ptb-120">
         <div class="container-fluid p-0">
             <div class="row justify-content-center">
                 <div class="col-xl-4 col-lg-8 col-md-6 col-sm-8 text-center">
                     <div class="section-header" data-aos="fade-up" data-aos-duration="1200">
-                        <h2 class="section-title">Galeria de <span>Treinos</span></h2>
+                        <h2 class="section-title">{{ __('messages.workout.gallery_the') }}
+                            <span>{{ __('messages.workout.training') }}</span>
+                        </h2>
                         <section class="video-section2">
                             <div class="container">
                                 <div class="row justify-content-center">
@@ -81,14 +83,14 @@
             </div>
             <div class="gallery-filter-wrapper">
                 <div class="button-group filter-btn-group">
-                    <button class="active" data-filter="*">Todos</button>
-                    <button data-filter=".workout">Treinos</button>
+                    <button class="active" data-filter="*">{{ __('messages.workout.all') }}</button>
+                    <button data-filter=".workout">{{ __('messages.workout.training') }}</button>
                 </div>
                 <div class="grid">
                     <div class="grid-item workout trainer">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/workout/a (1).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/a (1).jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -105,7 +107,7 @@
                     <div class="grid-item workout trainer">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/workout/a (2).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/a (2).jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -122,7 +124,7 @@
                     <div class="grid-item others workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/workout/a (3).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/a (3).jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -139,7 +141,7 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/workout/a (4).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/a (4).jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -157,7 +159,7 @@
                     <div class="grid-item trainer workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/workout/a (5).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/a (5).jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -175,7 +177,7 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/workout/a (6).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/a (6).jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -193,7 +195,7 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/workout/a (7).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/a (7).jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -211,7 +213,7 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/workout/a (8).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/a (8).jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -229,7 +231,7 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/workout/a (9).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/a (9).jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -247,7 +249,8 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/workout/a (10).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/a (10).jpg') }}"
+                                    alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -265,7 +268,8 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/workout/a (11).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/a (11).jpg') }}"
+                                    alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -283,7 +287,8 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/workout/a (12).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/a (12).jpg') }}"
+                                    alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -301,7 +306,8 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/workout/a (14).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/a (14).jpg') }}"
+                                    alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -319,7 +325,8 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/workout/a (16).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/a (16).jpg') }}"
+                                    alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -337,7 +344,8 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/workout/a (17).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/a (17).jpg') }}"
+                                    alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -355,7 +363,8 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/workout/a (18).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/a (18).jpg') }}"
+                                    alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -373,7 +382,8 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/workout/a (19).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/a (19).jpg') }}"
+                                    alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -391,7 +401,8 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/workout/a (20).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/a (20).jpg') }}"
+                                    alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -409,7 +420,8 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/workout/a (21).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/a (21).jpg') }}"
+                                    alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -427,7 +439,8 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/workout/a (22).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/a (22).jpg') }}"
+                                    alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -462,8 +475,8 @@
         </div>
     </section>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                    End Gallery
-                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                            End Gallery
+                                                                                                                                                                                                                                                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
 

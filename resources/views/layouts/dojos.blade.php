@@ -7,8 +7,8 @@
 @section('content')
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                    Start Banner
-                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                            Start Banner
+                                                                                                                                                                                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <section class="banner-section banner-section-two inner-banner-section bg-overlay-red bg_img"
         data-background="{{ asset('assets/images/spacesamurai.jpg') }}">
         <div class="section-logo-text">
@@ -25,41 +25,43 @@
         </nav>
     </div>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                    End Banner
-                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                            End Banner
+                                                                                                                                                                                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                    Start Scroll-To-Top
-                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                            Start Scroll-To-Top
+                                                                                                                                                                                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <a href="#" class="scrollToTop">
-        <img src="{{ asset('assets/images/logowhite.png') }}" alt="element">
+        <img loading="lazy" src="{{ asset('assets/images/logowhite.png') }}" alt="element">
         <div class="scrollToTop-icon">
             <i class="fas fa-arrow-up"></i>
         </div>
     </a>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                    End Scroll-To-Top
-                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                            End Scroll-To-Top
+                                                                                                                                                                                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                    Start Training
-                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                            Start Training
+                                                                                                                                                                                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <section class="training-section training-section--style ptb-120">
         <div class="training-element-one my-paroller" data-paroller-factor="0.2" data-paroller-type="foreground"
             data-paroller-direction="vertical">
-            <img src="{{ asset('assets/images/samurai2.jpg') }}" style="opacity: 0.3" alt="element">
+            <img loading="lazy" src="{{ asset('assets/images/samurai2.jpg') }}" style="opacity: 0.3" alt="element">
         </div>
         <div class="training-element-three my-paroller" data-paroller-factor="0.2" data-paroller-type="foreground"
             data-paroller-direction="vertical">
-            <img src="{{ asset('assets/images/samurai1.jpg') }}" style="opacity: 0.3" alt="element">
+            <img loading="lazy" src="{{ asset('assets/images/samurai1.jpg') }}" style="opacity: 0.3" alt="element">
         </div>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-6 text-center">
                     <div class="section-header" data-aos="fade-up" data-aos-duration="1200">
-                        <h2 class="section-title h2">Os Dojos da <span>WJJC Portugal</span></h2>
+                        <h2 class="section-title h2">
+                            <span>{{ __('messages.dojos.wjjc') }}</span>
+                        </h2>
                     </div>
                 </div>
             </div>
@@ -67,13 +69,13 @@
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-30">
                     <div class="training-item" data-aos="zoom-in" data-aos-duration="1200">
                         <div class="training-thumb">
-                            <img src="{{ asset('assets/images/logoptpts.jpg') }}" alt="training">
+                            <img loading="lazy" src="{{ asset('assets/images/logoptpts.jpg') }}" alt="training">
                         </div>
                         <div class="training-content">
                             <h3 class="title">Nihon Seishin Dojo</h3>
                             <p>Av. Infante Dom Pedro 1, 3230 -277 Penela</p>
                             <div class="contact-social-area">
-                                <span>Segue-nos: </span>
+                                <span>{{ __('messages.dojos.follow') }}</span>
                                 <ul class="contact-social">
                                     <li><a href="https://www.facebook.com/nihonseishindojo/" target="t_blank"><i
                                                 class="fab fa-facebook"></i></a></li>
@@ -81,7 +83,7 @@
                             </div>
                             <div class="training-footer-area">
                                 <div class="training-price">
-                                    <h4 class="title">Enviar E-mail</h4>
+                                    <h4 class="title">{{ __('messages.dojos.email') }}</h4>
                                 </div>
                                 <div class="training-footer-btn">
                                     <a href="mailto:pedro.nuno.jujitsu@gmail.com"><i class="fas fa-arrow-right"></i></a>
@@ -109,8 +111,8 @@
     </section>
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                    End Training
-                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                            End Training
+                                                                                                                                                                                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
 

@@ -34,7 +34,7 @@
                                                                                                                                                                                                                     Start Scroll-To-Top
                                                                                                                                                                                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <a href="#" class="scrollToTop">
-        <img src="{{ asset('assets/images/logowhite.png') }}" alt="element">
+        <img loading="lazy" src="{{ asset('assets/images/logowhite.png') }}" alt="element">
         <div class="scrollToTop-icon">
             <i class="fas fa-arrow-up"></i>
         </div>
@@ -65,7 +65,7 @@
                     <div class="grid-item competicao trainer">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/gallery2.jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/gallery2.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -82,7 +82,7 @@
                     <div class="grid-item competicao trainer">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/gallery3.jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/gallery3.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -99,7 +99,7 @@
                     <div class="grid-item others competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/gallery9.jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/gallery9.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -116,7 +116,7 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/gallery10.jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/gallery10.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -133,7 +133,7 @@
                     <div class="grid-item trainer competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/gallery11.jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/gallery11.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -151,7 +151,7 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/gallery12.jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/gallery12.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -169,7 +169,7 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/blog/a (1).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/blog/a (1).jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -187,7 +187,7 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/blog/a (2).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/blog/a (2).jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -205,7 +205,7 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/blog/a (3).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/blog/a (3).jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -223,7 +223,7 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/blog/a (4).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/blog/a (4).jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -241,7 +241,7 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/blog/a (5).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/blog/a (5).jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -259,7 +259,7 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/blog/a (6).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/blog/a (6).jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -277,7 +277,7 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/blog/a (7).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/blog/a (7).jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -295,7 +295,7 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/blog/a (8).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/blog/a (8).jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
@@ -313,7 +313,7 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img src="{{ asset('assets/images/blog/a (9).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/blog/a (9).jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>

@@ -3,8 +3,8 @@
 @section('description', 'Página inicial da WJJC Portugal')
 @section('content')
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Start Banner
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Start Banner
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <section class="banner">
         <div class="slider-prev">
             <i class="fas fa-chevron-left"></i>
@@ -140,38 +140,40 @@
                                 <div class="swiper-slide">
                                     <div class="service-item">
                                         <div class="service-thumb">
-                                            <img src="{{ asset('assets/images/gallery12.jpg') }}" alt="service">
-                                            <div class="service-overlay">
-                                                <div class="service-overlay-content">
-                                                    <h3 class="title"><a href="{{ route('founder.show') }}">Shodai Soke
-                                                            Adriano
-                                                            Busà</a>
-                                                    </h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="service-item">
-                                        <div class="service-thumb">
-                                            <img src="{{ asset('assets/images/jutsu.jpg') }}" alt="service">
-                                            <div class="service-overlay">
-                                                <div class="service-overlay-content">
-                                                    <h3 class="title"><a href="{{ route('founder.show') }}">Shodai Soke
-                                                            Adriano
-                                                            Busà</a>
-                                                    </h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="service-item">
-                                        <div class="service-thumb">
-                                            <img src="{{ asset('assets/images/pedropedro.jpg') }}" style="height: 463px"
+                                            <img loading="lazy" src="{{ asset('assets/images/gallery12.jpg') }}"
                                                 alt="service">
+                                            <div class="service-overlay">
+                                                <div class="service-overlay-content">
+                                                    <h3 class="title"><a href="{{ route('founder.show') }}">Shodai Soke
+                                                            Adriano
+                                                            Busà</a>
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="service-item">
+                                        <div class="service-thumb">
+                                            <img loading="lazy" src="{{ asset('assets/images/jutsu.jpg') }}"
+                                                alt="service">
+                                            <div class="service-overlay">
+                                                <div class="service-overlay-content">
+                                                    <h3 class="title"><a href="{{ route('founder.show') }}">Shodai Soke
+                                                            Adriano
+                                                            Busà</a>
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="service-item">
+                                        <div class="service-thumb">
+                                            <img loading="lazy" src="{{ asset('assets/images/pedropedro.jpg') }}"
+                                                style="height: 463px" alt="service">
                                             <div class="service-overlay">
                                                 <div class="service-overlay-content">
                                                     <h3 class="title"><a href="{{ route('dtn.show') }}">Sensei Pedro
@@ -186,7 +188,8 @@
                                 <div class="swiper-slide">
                                     <div class="service-item">
                                         <div class="service-thumb">
-                                            <img src="{{ asset('assets/images/ss.jpg') }}" alt="service">
+                                            <img loading="lazy" src="{{ asset('assets/images/ss.jpg') }}"
+                                                alt="service">
                                             <div class="service-overlay">
                                                 <div class="service-overlay-content">
                                                     <h3 class="title"><a href="{{ route('dtn.show') }}">Sensei Pedro
@@ -210,8 +213,8 @@
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Start Blog
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Start Blog
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <section class="blog-section blog-section-two ptb-120">
         <div class="container">
             <div class="row justify-content-center">
@@ -227,7 +230,7 @@
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-30">
                         <div class="blog-item" data-aos="zoom-in" data-aos-duration="1200">
                             <div class="blog-thumb">
-                                <img src="{{ asset('assets/images/blog/new1.jpg') }}" alt="blog">
+                                <img loading="lazy" src="{{ asset('assets/images/blog/new1.jpg') }}" alt="blog">
                                 {{-- <div class="blog-date">
                                     <span>24-25, 2024</span>
                                 </div> --}}
@@ -247,7 +250,7 @@
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-30">
                         <div class="blog-item" data-aos="zoom-in" data-aos-duration="1200">
                             <div class="blog-thumb">
-                                <img src="{{ asset('assets/images/blog/new2.jpg') }}" alt="blog">
+                                <img loading="lazy" src="{{ asset('assets/images/blog/new2.jpg') }}" alt="blog">
                                 <div class="blog-date">
                                     <span>{{ __('messages.index.may') }} 16-23, 2024</span>
                                 </div>
@@ -266,7 +269,7 @@
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-30">
                         <div class="blog-item" data-aos="zoom-in" data-aos-duration="1200">
                             <div class="blog-thumb">
-                                <img src="{{ asset('assets/images/blog/new3.jpg') }}" alt="blog">
+                                <img loading="lazy" src="{{ asset('assets/images/blog/new3.jpg') }}" alt="blog">
                                 <div class="blog-date">
                                     <span>{{ __('messages.index.Julho') }} 25-26, 2024</span>
                                 </div>
@@ -288,7 +291,7 @@
         </div>
     </section>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            End Blog
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    End Blog
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 @endsection

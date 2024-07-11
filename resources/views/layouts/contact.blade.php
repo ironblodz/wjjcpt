@@ -5,8 +5,8 @@
 
 @section('content')
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                Start Banner
-                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                Start Banner
+                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <section class="banner-section banner-section-two inner-banner-section bg-overlay-red bg_img"
         data-background="{{ asset('assets/images/spacesamurai.jpg') }}">
         <div class="section-logo-text">
@@ -17,47 +17,48 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">WJJC</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Contacte-nos</li>
+                <li class="breadcrumb-item active" aria-current="page">{{ __('messages.contacts.contact') }}</li>
             </ol>
         </nav>
     </div>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                End Banner
-                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                End Banner
+                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                Start Scroll-To-Top
-                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                Start Scroll-To-Top
+                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <a href="#" class="scrollToTop">
-        <img src="{{ asset('assets/images/logowhite.png') }}" style="width: 100px;" alt="element">
+        <img loading="lazy" src="{{ asset('assets/images/logowhite.png') }}" style="width: 100px;" alt="element">
         <div class="scrollToTop-icon">
             <i class="fas fa-arrow-up"></i>
         </div>
     </a>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                End Scroll-To-Top
-                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                End Scroll-To-Top
+                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                Start Contact-item
-                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                Start Contact-item
+                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <section class="contact-item-section ptb-120">
         <div class="contact-element-one my-paroller" data-paroller-factor="0.2" data-paroller-type="foreground"
             data-paroller-direction="vertical">
-            <img src="{{ asset('assets/images/samurai2.jpg') }}" style="opacity: 0.3" alt="element">
+            <img loading="lazy" src="{{ asset('assets/images/samurai2.jpg') }}" style="opacity: 0.3" alt="element">
         </div>
         <div class="contact-element-two my-paroller" class="" data-paroller-factor="0.2"
             data-paroller-type="foreground" data-paroller-direction="vertical">
-            <img src="{{ asset('assets/images/samurai1.jpg') }}" style="opacity: 0.3" alt="element">
+            <img loading="lazy" src="{{ asset('assets/images/samurai1.jpg') }}" style="opacity: 0.3" alt="element">
         </div>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-10 col-lg-12 text-center">
                     <div class="section-header">
-                        <h2 class="section-title">Pronto para obter mais <span> informação</span></h2>
-                        <p>A arte suave é sobre suavidade e flexibilidade, não força bruta.</p>
+                        <h2 class="section-title">{{ __('messages.contacts.done') }} <span>
+                                {{ __('messages.contacts.information') }}</span></h2>
+                        <p>{{ __('messages.contacts.art') }}</p>
                     </div>
                 </div>
             </div>
@@ -66,15 +67,14 @@
                     <div class="contact-item">
                         <div class="contact-icon-area">
                             <div class="contact-icon">
-                                <img src="assets/images/icon/icon-64.png" alt="icon">
+                                <img loading="lazy" src="assets/images/icon/icon-64.png" alt="icon">
                             </div>
                         </div>
                         <div class="contact-content">
-                            <h4 class="title">Morada</h4>
+                            <h4 class="title">{{ __('messages.contacts.address') }}</h4>
                             <p>Calçada de São Sebastião 3000-375 Coimbra<br> <a
                                     href="https://www.google.pt/maps/place/Nihon+Seishin+Dojo/@40.0272594,-8.3896581,17z/data=!3m1!4b1!4m6!3m5!1s0xd22f300579cccab:0x618a61da8f50920f!8m2!3d40.0272553!4d-8.3870832!16s%2Fg%2F11vqqk9tfc?hl=pt-PT&entry=ttu"
-                                    target="_blank">ver
-                                    mapa</a> </p>
+                                    target="_blank">{{ __('messages.contacts.watchmap') }}</a> </p>
                         </div>
                     </div>
                 </div>
@@ -82,7 +82,7 @@
                     <div class="contact-item">
                         <div class="contact-icon-area">
                             <div class="contact-icon">
-                                <img src="assets/images/icon/icon-65.png" alt="icon">
+                                <img loading="lazy" src="assets/images/icon/icon-65.png" alt="icon">
                             </div>
                         </div>
                         <div class="contact-content">
@@ -95,12 +95,12 @@
                     <div class="contact-item">
                         <div class="contact-icon-area">
                             <div class="contact-icon">
-                                <img src="assets/images/icon/icon-66.png" alt="icon">
+                                <img loading="lazy" src="assets/images/icon/icon-66.png" alt="icon">
                             </div>
                         </div>
                         <div class="contact-content">
-                            <h4 class="title">Enviar mail</h4>
-                            <p>wjjcportugal@gmail.com<br> <a href="mailto:">enviar agora</a> </p>
+                            <h4 class="title">{{ __('messages.contacts.mail') }}</h4>
+                            <p>wjjcportugal@gmail.com<br> <a href="mailto:">{{ __('messages.contacts.sendnow') }}</a> </p>
                         </div>
                     </div>
                 </div>
@@ -108,20 +108,22 @@
         </div>
     </section>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                End Contact-item
-                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                End Contact-item
+                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                Start Account widget
-                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                Start Account widget
+                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <section class="account-widget-section account-widget-section-two account-widget-section--style ptb-120">
         <div class="container">
             <div class="row justify-content-center align-items-center mb-60-none">
                 <div class="col-xl-6 col-lg-6 mb-60">
                     <div class="account-widget-left">
                         <div class="section-header">
-                            <h2 class="section-title">Qualquer pergunta? Sinta-se livre para <span>Contactar-nos</span></h2>
+                            <h2 class="section-title">
+                                {{ __('messages.contacts.question') }}<span>{{ __('messages.contacts.contactus') }}</span>
+                            </h2>
                             {{-- <p>If you have any questions or need more information, please use the form below to send us a
                                 message There were twelve rules in all, and they specified that fights should be "a fair
                                 stand-up boxing match" in a 24-foot-square or similar ring. </p> --}}
@@ -130,19 +132,21 @@
                             <div class="banner-widget-wrapper">
                                 <div class="banner-widget-left">
                                     <div class="banner-widget-thumb">
-                                        <img src="{{ asset('assets/images/LOGO.png') }}" width="107" height="36"
-                                            alt="element">
+                                        <img loading="lazy" src="{{ asset('assets/images/LOGO.png') }}" width="107"
+                                            height="36" alt="element">
                                     </div>
                                 </div>
                                 <div class="banner-widget-middle">
                                     <div class="banner-widget-content">
-                                        <p>Junta-te a <span>nós</span></p>
+                                        <p>{{ __('messages.contacts.join') }}
+                                            <span>{{ __('messages.contacts.we') }}</span>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="contact-social-area">
-                            <span>Segue-nos: </span>
+                            <span>{{ __('messages.contacts.follow') }}</span>
                             <ul class="contact-social">
                                 <li><a href="https://www.facebook.com/profile.php?id=61557533270967" target="t_blank"><i
                                             class="fab fa-facebook"></i></a></li>
@@ -154,7 +158,7 @@
                 </div>
                 <div class="col-xl-6 col-lg-6 mb-60">
                     <div class="account-widget-form-area">
-                        <h2>Para mais informações contacte pelo seguinte email:</h2>
+                        <h2>{{ __('messages.contacts.informations') }}</h2>
                         <p> <a
                                 href="mailto:wjjcportugal@gmail.com?subject=Assunto%20do%20Email&body=Este%20é%20o%20corpo%20do%20email.">wjjcportugal@gmail.com</a></a>
                         </p>
@@ -206,13 +210,13 @@
         </div>
     </section>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                End Account widget
-                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                End Account widget
+                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                Start Map
-                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                Start Map
+                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <section class="map-section ptb-120">
         <div class="container">
             <div class="row justify-content-center mb-5-none">
@@ -228,7 +232,7 @@
         </div>
     </section>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                End Map
-                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                End Map
+                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 @endsection

@@ -38,7 +38,7 @@ class GenerateSitemap extends Command
         // Adiciona URLs ao sitemap
         $sitemap->add(Url::create($baseUrl . '/')->setPriority(1.0)->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY));
         $sitemap->add(Url::create($baseUrl . '/contact')->setPriority(0.8)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY));
-        $sitemap->add(Url::create($baseUrl . '/clubs')->setPriority(0.8)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY));
+        $sitemap->add(Url::create($baseUrl . '/dojos')->setPriority(0.8)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY));
         $sitemap->add(Url::create($baseUrl . '/dtn')->setPriority(0.8)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY));
         $sitemap->add(Url::create($baseUrl . '/founder')->setPriority(0.8)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY));
         $sitemap->add(Url::create($baseUrl . '/gallery')->setPriority(0.8)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY));
@@ -49,7 +49,6 @@ class GenerateSitemap extends Command
         $sitemap->add(Url::create($baseUrl . '/wjjcgallery')->setPriority(0.8)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY));
         $sitemap->add(Url::create($baseUrl . '/workout')->setPriority(0.8)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY));
         $sitemap->add(Url::create($baseUrl . '/certification')->setPriority(0.8)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY));
-        $sitemap->add(Url::create($baseUrl . '/logo')->setPriority(0.8)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY));
 
         // Salva o sitemap no arquivo sitemap.xml
         $sitemap->writeToFile(public_path('sitemap.xml'));

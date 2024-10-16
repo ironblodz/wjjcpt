@@ -9,8 +9,8 @@
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                Start Banner
-                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                    Start Banner
+                                                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <section class="banner-section banner-section-two inner-banner-section bg-overlay-red bg_img"
         data-background="{{ asset('assets/images/spacesamurai.jpg') }}">
         <div class="section-logo-text">
@@ -26,13 +26,13 @@
         </nav>
     </div>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                End Banner
-                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                    End Banner
+                                                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                Start Scroll-To-Top
-                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                    Start Scroll-To-Top
+                                                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <a href="#" class="scrollToTop">
         <img loading="lazy" src="{{ asset('assets/images/logowhite.png') }}" alt="element">
         <div class="scrollToTop-icon">
@@ -40,13 +40,13 @@
         </div>
     </a>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                End Scroll-To-Top
-                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                    End Scroll-To-Top
+                                                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                Start Gallery
-                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                    Start Gallery
+                                                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <section class="gallery-section ptb-120">
         <div class="container-fluid p-0">
             <div class="row justify-content-center">
@@ -90,13 +90,13 @@
                     <div class="grid-item workout trainer">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy" src="{{ asset('assets/images/workout/a (1).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/b.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/workout/a (1).jpg') }}"><img
+                                                href="{{ asset('assets/images/workout/b.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
                                         </div>
                                     </div>
@@ -107,13 +107,13 @@
                     <div class="grid-item workout trainer">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy" src="{{ asset('assets/images/workout/a (2).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/c.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/workout/a (2).jpg') }}"><img
+                                                href="{{ asset('assets/images/workout/c.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
                                         </div>
                                     </div>
@@ -124,13 +124,13 @@
                     <div class="grid-item others workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy" src="{{ asset('assets/images/workout/a (3).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/d.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/workout/a (3).jpg') }}"><img
+                                                href="{{ asset('assets/images/workout/d.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
                                         </div>
                                     </div>
@@ -141,13 +141,13 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy" src="{{ asset('assets/images/workout/a (4).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/e.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/workout/a (4).jpg') }}"><img
+                                                href="{{ asset('assets/images/workout/e.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -159,13 +159,13 @@
                     <div class="grid-item trainer workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy" src="{{ asset('assets/images/workout/a (5).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/f.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/workout/a (5).jpg') }}"><img
+                                                href="{{ asset('assets/images/workout/f.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -177,13 +177,13 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy" src="{{ asset('assets/images/workout/a (6).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/g.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/workout/a (6).jpg') }}"><img
+                                                href="{{ asset('assets/images/workout/g.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -195,13 +195,13 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy" src="{{ asset('assets/images/workout/a (7).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/h.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/workout/a (7).jpg') }}"><img
+                                                href="{{ asset('assets/images/workout/h.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -213,13 +213,13 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy" src="{{ asset('assets/images/workout/a (8).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/i.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/workout/a (8).jpg') }}"><img
+                                                href="{{ asset('assets/images/workout/i.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -231,13 +231,13 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy" src="{{ asset('assets/images/workout/a (9).jpg') }}" alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/j.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/workout/a (9).jpg') }}"><img
+                                                href="{{ asset('assets/images/workout/j.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -249,14 +249,13 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy" src="{{ asset('assets/images/workout/a (10).jpg') }}"
-                                    alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/k.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/workout/a (10).jpg') }}"><img
+                                                href="{{ asset('assets/images/workout/k.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -268,14 +267,13 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy" src="{{ asset('assets/images/workout/a (11).jpg') }}"
-                                    alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/kk.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/workout/a (11).jpg') }}"><img
+                                                href="{{ asset('assets/images/workout/kk.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -287,14 +285,13 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy" src="{{ asset('assets/images/workout/a (12).jpg') }}"
-                                    alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/kkk.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/workout/a (12).jpg') }}"><img
+                                                href="{{ asset('assets/images/workout/kkk.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -306,14 +303,13 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy" src="{{ asset('assets/images/workout/a (14).jpg') }}"
-                                    alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/kkkk.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/workout/a (14).jpg') }}"><img
+                                                href="{{ asset('assets/images/workout/kkkk.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -325,14 +321,13 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy" src="{{ asset('assets/images/workout/a (16).jpg') }}"
-                                    alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/v.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/workout/a (16).jpg') }}"><img
+                                                href="{{ asset('assets/images/workout/v.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -344,14 +339,13 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy" src="{{ asset('assets/images/workout/a (17).jpg') }}"
-                                    alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/vv.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/workout/a (17).jpg') }}"><img
+                                                href="{{ asset('assets/images/workout/vv.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -363,14 +357,13 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy" src="{{ asset('assets/images/workout/a (18).jpg') }}"
-                                    alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/vvv.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/workout/a (18).jpg') }}"><img
+                                                href="{{ asset('assets/images/workout/vvv.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -382,14 +375,13 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy" src="{{ asset('assets/images/workout/a (19).jpg') }}"
-                                    alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/vvvv.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/workout/a (19).jpg') }}"><img
+                                                href="{{ asset('assets/images/workout/vvvv.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -401,14 +393,13 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy" src="{{ asset('assets/images/workout/a (20).jpg') }}"
-                                    alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/n.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/workout/a (20).jpg') }}"><img
+                                                href="{{ asset('assets/images/workout/n.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -420,14 +411,13 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy" src="{{ asset('assets/images/workout/a (21).jpg') }}"
-                                    alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/nn.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/workout/a (21).jpg') }}"><img
+                                                href="{{ asset('assets/images/workout/nn.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -439,14 +429,13 @@
                     <div class="grid-item workout">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy" src="{{ asset('assets/images/workout/a (22).jpg') }}"
-                                    alt="gallery">
+                                <img loading="lazy" src="{{ asset('assets/images/workout/nnn.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/workout/a (22).jpg') }}"><img
+                                                href="{{ asset('assets/images/workout/nnn.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -475,8 +464,8 @@
         </div>
     </section>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                End Gallery
-                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                    End Gallery
+                                                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
 

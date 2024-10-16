@@ -9,8 +9,8 @@
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                    Start Banner
-                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                    Start Banner
+                                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <section class="banner-section banner-section-two inner-banner-section bg-overlay-red bg_img"
         data-background="{{ asset('assets/images/spacesamurai.jpg') }}">
         <div class="section-logo-text">
@@ -26,13 +26,13 @@
         </nav>
     </div>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                    End Banner
-                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                    End Banner
+                                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                    Start Scroll-To-Top
-                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                    Start Scroll-To-Top
+                                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <a href="#" class="scrollToTop">
         <img loading="lazy"src="{{ asset('assets/images/logowhite.png') }}" alt="element">
         <div class="scrollToTop-icon">
@@ -40,13 +40,13 @@
         </div>
     </a>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                    End Scroll-To-Top
-                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                    End Scroll-To-Top
+                                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                    Start Gallery
-                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                    Start Gallery
+                                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <section class="gallery-section ptb-120">
         <div class="container-fluid p-0">
             <div class="row justify-content-center">
@@ -61,6 +61,7 @@
                 <div class="button-group filter-btn-group">
                     <button class="active" data-filter="*">{{ __('messages.events.all') }}</button>
                     <button data-filter=".competicao">{{ __('messages.events.master') }}</button>
+                    <button data-filter=".seminar">{{ __('messages.events.seminar') }}</button>
                 </div>
                 <div class="grid">
                     <div class="grid-item competicao trainer">
@@ -167,16 +168,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="grid-item competicao">
+                    <div class="grid-item trainer competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy"src="{{ asset('assets/images/blog/a (1).jpg') }}" alt="gallery">
+                                <img loading="lazy"src="{{ asset('assets/images/blog/b.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/blog/a (1).jpg') }}"><img
+                                                href="{{ asset('assets/images/blog/b.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -188,13 +189,13 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy"src="{{ asset('assets/images/blog/a (2).jpg') }}" alt="gallery">
+                                <img loading="lazy"src="{{ asset('assets/images/blog/bb.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/blog/a (2).jpg') }}"><img
+                                                href="{{ asset('assets/images/blog/bb.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -206,13 +207,13 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy"src="{{ asset('assets/images/blog/a (3).jpg') }}" alt="gallery">
+                                <img loading="lazy"src="{{ asset('assets/images/blog/bbb.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/blog/a (3).jpg') }}"><img
+                                                href="{{ asset('assets/images/blog/bbb.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -224,13 +225,13 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy"src="{{ asset('assets/images/blog/a (4).jpg') }}" alt="gallery">
+                                <img loading="lazy"src="{{ asset('assets/images/blog/bbbb.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/blog/a (4).jpg') }}"><img
+                                                href="{{ asset('assets/images/blog/bbbb.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -242,13 +243,13 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy"src="{{ asset('assets/images/blog/a (5).jpg') }}" alt="gallery">
+                                <img loading="lazy"src="{{ asset('assets/images/blog/c.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/blog/a (5).jpg') }}"><img
+                                                href="{{ asset('assets/images/blog/c.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -260,13 +261,13 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy"src="{{ asset('assets/images/blog/a (6).jpg') }}" alt="gallery">
+                                <img loading="lazy"src="{{ asset('assets/images/blog/cc.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/blog/a (6).jpg') }}"><img
+                                                href="{{ asset('assets/images/blog/cc.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -278,13 +279,13 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy"src="{{ asset('assets/images/blog/a (7).jpg') }}" alt="gallery">
+                                <img loading="lazy"src="{{ asset('assets/images/blog/ccc.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/blog/a (7).jpg') }}}"><img
+                                                href="{{ asset('assets/images/blog/ccc.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -296,13 +297,13 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy"src="{{ asset('assets/images/blog/a (8).jpg') }}" alt="gallery">
+                                <img loading="lazy"src="{{ asset('assets/images/blog/cccc.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/blog/a (8).jpg') }}"><img
+                                                href="{{ asset('assets/images/blog/cccc.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -314,13 +315,13 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy"src="{{ asset('assets/images/blog/a (9).jpg') }}" alt="gallery">
+                                <img loading="lazy"src="{{ asset('assets/images/blog/d.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/blog/a (9).jpg') }}"><img
+                                                href="{{ asset('assets/images/blog/d.jpg') }}}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -332,13 +333,13 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy"src="{{ asset('assets/images/blog/a (10).jpg') }}" alt="gallery">
+                                <img loading="lazy"src="{{ asset('assets/images/blog/dd.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/blog/a (10).jpg') }}"><img
+                                                href="{{ asset('assets/images/blog/dd.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -350,13 +351,13 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy"src="{{ asset('assets/images/blog/a (11).jpg') }}" alt="gallery">
+                                <img loading="lazy"src="{{ asset('assets/images/blog/ddd.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/blog/a (11).jpg') }}"><img
+                                                href="{{ asset('assets/images/blog/ddd.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -368,13 +369,13 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy"src="{{ asset('assets/images/blog/a (12).jpg') }}" alt="gallery">
+                                <img loading="lazy"src="{{ asset('assets/images/blog/dddd.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/blog/a (12).jpg') }}"><img
+                                                href="{{ asset('assets/images/blog/dddd.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -386,13 +387,13 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy"src="{{ asset('assets/images/blog/a (13).jpg') }}" alt="gallery">
+                                <img loading="lazy"src="{{ asset('assets/images/blog/e.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/blog/a (13).jpg') }}"><img
+                                                href="{{ asset('assets/images/blog/e.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -404,13 +405,13 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy"src="{{ asset('assets/images/blog/a (14).jpg') }}" alt="gallery">
+                                <img loading="lazy"src="{{ asset('assets/images/blog/ee.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/blog/a (14).jpg') }}"><img
+                                                href="{{ asset('assets/images/blog/ee.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -422,13 +423,13 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy"src="{{ asset('assets/images/blog/a (15).jpg') }}" alt="gallery">
+                                <img loading="lazy"src="{{ asset('assets/images/blog/eee.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/blog/a (15).jpg') }}"><img
+                                                href="{{ asset('assets/images/blog/eee.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -440,13 +441,13 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy"src="{{ asset('assets/images/blog/a (16).jpg') }}" alt="gallery">
+                                <img loading="lazy"src="{{ asset('assets/images/blog/eeee.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/blog/a (16).jpg') }}"><img
+                                                href="{{ asset('assets/images/blog/eeee.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -458,13 +459,13 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy"src="{{ asset('assets/images/blog/a (17).jpg') }}" alt="gallery">
+                                <img loading="lazy"src="{{ asset('assets/images/blog/f.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/blog/a (17).jpg') }}"><img
+                                                href="{{ asset('assets/images/blog/f.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -476,13 +477,13 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy"src="{{ asset('assets/images/blog/a (18).jpg') }}" alt="gallery">
+                                <img loading="lazy"src="{{ asset('assets/images/blog/ff.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/blog/a (18).jpg') }}"><img
+                                                href="{{ asset('assets/images/blog/ff.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -494,13 +495,13 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy"src="{{ asset('assets/images/blog/a (18).jpg') }}" alt="gallery">
+                                <img loading="lazy"src="{{ asset('assets/images/blog/fff.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/blog/a (18).jpg') }}"><img
+                                                href="{{ asset('assets/images/blog/fff.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -512,13 +513,13 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy"src="{{ asset('assets/images/blog/a (19).jpg') }}" alt="gallery">
+                                <img loading="lazy"src="{{ asset('assets/images/blog/ffff.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/blog/a (19).jpg') }}"><img
+                                                href="{{ asset('assets/images/blog/ffff.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -530,13 +531,13 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy"src="{{ asset('assets/images/blog/a (20).jpg') }}" alt="gallery">
+                                <img loading="lazy"src="{{ asset('assets/images/blog/g.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/blog/a (20).jpg') }}"><img
+                                                href="{{ asset('assets/images/blog/g.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -548,13 +549,13 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy"src="{{ asset('assets/images/blog/a (21).jpg') }}" alt="gallery">
+                                <img loading="lazy"src="{{ asset('assets/images/blog/gg.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/blog/a (21).jpg') }}"><img
+                                                href="{{ asset('assets/images/blog/gg.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -566,13 +567,13 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy"src="{{ asset('assets/images/blog/a (22).jpg') }}" alt="gallery">
+                                <img loading="lazy"src="{{ asset('assets/images/blog/ggg.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/blog/a (22).jpg') }}"><img
+                                                href="{{ asset('assets/images/blog/ggg.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -584,13 +585,13 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy"src="{{ asset('assets/images/blog/a (23).jpg') }}" alt="gallery">
+                                <img loading="lazy"src="{{ asset('assets/images/blog/a.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/blog/a (23).jpg') }}"><img
+                                                href="{{ asset('assets/images/blog/a.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -602,13 +603,13 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy"src="{{ asset('assets/images/blog/a (24).jpg') }}" alt="gallery">
+                                <img loading="lazy"src="{{ asset('assets/images/blog/aa.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/blog/a (24).jpg') }}"><img
+                                                href="{{ asset('assets/images/blog/aa.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -620,13 +621,13 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy"src="{{ asset('assets/images/blog/a (25).jpg') }}" alt="gallery">
+                                <img loading="lazy"src="{{ asset('assets/images/blog/aaa.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/blog/a (25).jpg') }}"><img
+                                                href="{{ asset('assets/images/blog/aaa.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -638,49 +639,13 @@
                     <div class="grid-item competicao">
                         <div class="gallery-item">
                             <div class="gallery-thumb">
-                                <img loading="lazy"src="{{ asset('assets/images/blog/a (26).jpg') }}" alt="gallery">
+                                <img loading="lazy"src="{{ asset('assets/images/blog/aaaa.jpg') }}" alt="gallery">
                                 <div class="gallery-overlay">
                                     <div class="gallery-content">
                                         <h4 class="title">WJJC</h4>
                                         <div class="gallery-icon">
                                             <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/blog/a (26).jpg') }}"><img
-                                                    src="{{ asset('assets/images/icon/icon-47.png') }}"
-                                                    alt="gallery"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid-item competicao">
-                        <div class="gallery-item">
-                            <div class="gallery-thumb">
-                                <img loading="lazy"src="{{ asset('assets/images/blog/a (27).jpg') }}" alt="gallery">
-                                <div class="gallery-overlay">
-                                    <div class="gallery-content">
-                                        <h4 class="title">WJJC</h4>
-                                        <div class="gallery-icon">
-                                            <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/blog/a (27).jpg') }}"><img
-                                                    src="{{ asset('assets/images/icon/icon-47.png') }}"
-                                                    alt="gallery"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid-item competicao">
-                        <div class="gallery-item">
-                            <div class="gallery-thumb">
-                                <img loading="lazy"src="{{ asset('assets/images/blog/a (28).jpg') }}" alt="gallery">
-                                <div class="gallery-overlay">
-                                    <div class="gallery-content">
-                                        <h4 class="title">WJJC</h4>
-                                        <div class="gallery-icon">
-                                            <a class="img-popup" data-rel="lightcase:myCollection"
-                                                href="{{ asset('assets/images/blog/a (28).jpg') }}"><img
+                                                href="{{ asset('assets/images/blog/aaaa.jpg') }}"><img
                                                     src="{{ asset('assets/images/icon/icon-47.png') }}"
                                                     alt="gallery"></a>
                                         </div>
@@ -691,26 +656,610 @@
                     </div>
                 </div>
             </div>
-            {{-- <nav>
-                <ul class="pagination justify-content-center">
-                    <li class="page-item prev">
-                        <a class="page-link" href="#" rel="prev" aria-label="Prev &raquo;">Anterior</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">01</a></li>
-                    <li class="page-item active" aria-current="page"><span class="page-link">02</span></li>
-                    <li class="page-item"><a class="page-link" href="#">03</a></li>
-                    <li class="page-item"><a class="page-link" href="#">04</a></li>
-                    <li class="page-item"><a class="page-link" href="#">05</a></li>
-                    <li class="page-item next">
-                        <a class="page-link" href="#" rel="next" aria-label="Next &raquo;">Próximo</a>
-                    </li>
-                </ul>
-            </nav> --}}
+
+            {{-- GALLERY INTERSHIP JULY PENELA 2024 --}}
+
+            <div class="grid">
+                <div class="grid-item seminar ">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/1.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/1.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar ">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/2.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/2.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/3.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/3.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/4.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/4.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/5.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/5.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/6.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/6.png') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/7.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/7.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/8.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/8.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/9.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/9.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/10.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/10.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/11.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/11.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/12.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/12.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/13.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/13.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/14.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/14.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/15.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/15.jpg') }}}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/16.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/16.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/17.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/17.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/18.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/18.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/19.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/19.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/20.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/20.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/21.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/21.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/22.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/22.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/23.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/23.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/24.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/24.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/25.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/25.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/26.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/26.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/27.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/27.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/28.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/28.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/29.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/29.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/30.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/30.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/31.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/31.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/32.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/32.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/33.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/33.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item seminar">
+                    <div class="gallery-item">
+                        <div class="gallery-thumb">
+                            <img loading="lazy"src="{{ asset('assets/images/gallerypenela/34.jpg') }}" alt="gallery">
+                            <div class="gallery-overlay">
+                                <div class="gallery-content">
+                                    <h4 class="title">WJJC</h4>
+                                    <div class="gallery-icon">
+                                        <a class="img-popup" data-rel="lightcase:myCollection"
+                                            href="{{ asset('assets/images/gallerypenela/34.jpg') }}"><img
+                                                src="{{ asset('assets/images/icon/icon-47.png') }}" alt="gallery"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- <nav>
+            <ul class="pagination justify-content-center">
+                <li class="page-item prev">
+                    <a class="page-link" href="#" rel="prev" aria-label="Prev &raquo;">Anterior</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">01</a></li>
+                <li class="page-item active" aria-current="page"><span class="page-link">02</span></li>
+                <li class="page-item"><a class="page-link" href="#">03</a></li>
+                <li class="page-item"><a class="page-link" href="#">04</a></li>
+                <li class="page-item"><a class="page-link" href="#">05</a></li>
+                <li class="page-item next">
+                    <a class="page-link" href="#" rel="next" aria-label="Next &raquo;">Próximo</a>
+                </li>
+            </ul>
+        </nav> --}}
         </div>
     </section>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                    End Gallery
-                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                    End Gallery
+                                                                                                                                                                                                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
 

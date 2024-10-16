@@ -72,7 +72,11 @@
                             <img loading="lazy" src="{{ asset('assets/images/logoptpts.jpg') }}" alt="training">
                         </div>
                         <div class="training-content">
-                            <h3 class="title">Nihon Seishin Dojo</h3>
+                           <div>
+                                <h3 class="title mb-0">Nihon Seishin Dojo</h3>
+                                <span>Sede Nacional</span>
+                            </div>
+                            <br>
                             <p>Av. Infante Dom Pedro 1, 3230 -277 Penela</p>
                             <div class="contact-social-area">
                                 <span>{{ __('messages.dojos.follow') }}</span>

@@ -47,6 +47,8 @@ Route::get('/certification', [PagesController::class, 'showCertification'])->nam
 
 Route::get('/logo', [PagesController::class, 'showLogo'])->name('logo.show');
 
+
+
 // web.php
 
 Route::get('/lang/{locale}', function ($locale) {

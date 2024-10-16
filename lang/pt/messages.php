@@ -184,7 +184,7 @@ return [
         'wjjc-internacional' => '>WJJC Portugal',
         'we' => 'A nossa',
         'history' => 'História',
-        'world' => 'A WJJC Portugal é uma organização sem fins lucrativos cuja missão é a disseminação e
+        'world' => 'A Associação WJJC Portugal é uma organização sem fins lucrativos fundada em 2024 e cuja missão é a disseminação e
                                 desenvolvimento do Kishidō Ju-Jitsu pelo território nacional.',
         'organization' => 'A nossa filosofia é
                                 que a complementaridade será sempre uma poderosa ferramenta de crescimento e no qual através
@@ -258,6 +258,7 @@ return [
         'gallery' => 'Galeria de',
         'all' => 'Todos',
         'master' => 'Master Class Itália 2024',
+        'seminar' => 'Estágio Interno Ju-Jitsu Penela Julho 2024',
     ],
 
     'workout' => [

@@ -111,6 +111,43 @@ body {
     overflow-x: hidden;
 }
 
+.cursor {
+    z-index: 999;
+    position: absolute;
+    background: #e80000;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 20px #e80000,
+        0 0 60px #e80000,
+        0 0 100px #e80000;
+    animation: colors 5s infinite;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+@keyframes colors {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(180deg);
+    }
+}
+
+.cursor:before {
+    content: '';
+    position: absolute;
+    background: #e80000;
+    width: 50px;
+    height: 50px;
+    opacity: 0.2;
+    transform: translate(-30%, -30%);
+    border-radius: 50%;
+}
+
 @media only screen and (max-width: 991px) {
     body {
         font-size: 14px;
@@ -2889,14 +2926,14 @@ option {
     position: fixed;
     top: 0;
     left: 0;
-    width: 0;
-    height: 100%;
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999999;
-    background: white;
+    background: #fff;
+    /* Cor de fundo */
 }
 
 .loader {

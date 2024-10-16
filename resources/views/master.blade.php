@@ -93,17 +93,21 @@
 <body>
 
 
+    <div class="cursor"></div>
+
+
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     Start Preloader
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <div class="preloader">
+    <div class="preloader" id="preloader">
         <div class="loader">
             <div class="loader-thumb">
                 <img src="{{ asset('assets/images/LOGO.png') }}" alt="logo">
             </div>
         </div>
     </div>
+
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     End Preloader
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -130,7 +134,7 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav main-menu ml-auto mr-auto">
                                     <li class="menu_has_children">
-                                        <a href="{{ route('wjjc.show') }}">WJJC</a>
+                                        <a href="#">WJJC</a>
                                         <ul class="sub-menu">
                                             <li class="menu_has_children">
                                             <li><a
@@ -352,7 +356,34 @@ End Footer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
+    <script>
+        const cursor = document.querySelector(".cursor");
+        var timeout;
 
+        //follow cursor on mousemove
+        document.addEventListener("mousemove", (e) => {
+            let x = e.pageX;
+            let y = e.pageY;
+
+            cursor.style.top = y + "px";
+            cursor.style.left = x + "px";
+            cursor.style.display = "block";
+
+            //cursor effects when mouse stopped
+            function mouseStopped() {
+                cursor.style.display = "none";
+            }
+            clearTimeout(timeout);
+            timeout = setTimeout(mouseStopped, 5000);
+        });
+
+        //cursor effects when mouseout
+        document.addEventListener("mouseout", () => {
+            cursor.style.display = "none";
+        });
+    </script>
+
+  
     <!-- jquery -->
     <script src="{{ asset('assets/js/jquery.js') }}"></script>
     <!-- bootstrap js -->

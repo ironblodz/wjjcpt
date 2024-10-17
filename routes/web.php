@@ -28,6 +28,10 @@ Route::get('/dojos', [PagesController::class, 'showDojos'])->name('dojos.show');
 
 Route::get('/dtn', [PagesController::class, 'showDtn'])->name('dtn.show');
 
+Route::get('/filiacao', [PagesController::class, 'showFiliacao'])->name('filiacao.show');
+
+Route::get('/association', [PagesController::class, 'showAssociation'])->name('association.show');
+
 Route::get('/founder', [PagesController::class, 'showFounder'])->name('founder.show');
 Route::get('/gallery', [PagesController::class, 'showGallery'])->name('gallery.show');
 

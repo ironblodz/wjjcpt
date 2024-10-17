@@ -162,8 +162,18 @@
                                             <img src="{{ asset('assets/images/LOGO.png') }}" width="150"
                                                 height="150" alt="logo">
                                         </a></li>
-                                    <li class="menu_has_children"><a href="{{ route('wjjcpt.show') }}">WJJC
-                                            PORTUGAL</a></li>
+                                        <li class="menu_has_children">
+                                            <a href="#">WJJC Portugal</a>
+                                            <ul class="sub-menu">
+                                                <li class="menu_has_children">
+                                                <li><a
+                                                        href="{{ route('associacao.show') }}">A Associação</a>
+                                                </li>
+                                                <li><a
+                                                        href="{{ route('filiacao.show') }}">Filiações</a>
+                                                </li>
+                                            </ul>
+                                        </li>
                                     <li><a href="{{ route('dojos.show') }}">{{ __('messages.navbar.dojos') }}</a>
                                     </li>
                                     <li class="menu_has_children">
@@ -383,7 +393,7 @@ End Footer
         });
     </script>
 
-  
+
     <!-- jquery -->
     <script src="{{ asset('assets/js/jquery.js') }}"></script>
     <!-- bootstrap js -->

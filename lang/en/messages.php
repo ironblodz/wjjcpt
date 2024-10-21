@@ -14,6 +14,25 @@ return [
         'logo' => 'St. George Logo',
         'certification' => 'WJJC Certification',
         'history_wjjc' => 'History of the WJJC',
+        'sponsors' => 'Sponsors',
+        'affiliations' => 'Affiliations',
+        'association' => 'Association',
+    ],
+    'association' => [
+        'association' => 'The Association',
+        'world' => 'The WJJC Portugal association is a non-profit organization founded in 2024 and whose mission is the propagation and dissemination
+                                development of Kishidō Ju-Jitsu across the national territory.',
+    ],
+    'affiliations' => [
+        'affiliation' => 'Affiliations',
+        'federation' => 'Ju-Jitsu Federation and Associated Disciplines Portugal',
+        'national' => 'National',
+    ],
+    'sponsors' => [
+        'construction' => 'Under Construction',
+        'textbig' => 'We are updating information about our sponsors. We appreciate your patience and
+                            We will soon have news to share. In the meantime, feel free to come back to
+                            our homepage.',
     ],
     'description' => 'WJJC PORTUGAL',
     'keywords' => 'wjjc, wjjcportugal, wjjcinternational, ju-jitsu',

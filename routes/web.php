@@ -31,6 +31,10 @@ Route::get('/dtn', [PagesController::class, 'showDtn'])->name('dtn.show');
 Route::get('/founder', [PagesController::class, 'showFounder'])->name('founder.show');
 Route::get('/gallery', [PagesController::class, 'showGallery'])->name('gallery.show');
 
+Route::get('/affiliations', [PagesController::class, 'showAffiliations'])->name('affiliations.show');
+Route::get('/association', [PagesController::class, 'showAssociation'])->name('association.show');
+Route::get('/sponsors', [PagesController::class, 'showSponsors'])->name('sponsors.show');
+
 Route::get('/kishido', [PagesController::class, 'showKishido'])->name('kishido.show');
 
 Route::get('/wjjc', [PagesController::class, 'showWJJC'])->name('wjjc.show');

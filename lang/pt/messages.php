@@ -15,6 +15,25 @@ return [
         'logo' => 'O logo S. George',
         'certification' => 'A certificação da WJJC',
         'history_wjjc' => 'A história da WJJC',
+        'sponsors' => 'Patrocinadores',
+        'affiliations' => 'FIliações',
+        'association' => 'A Associação',
+    ],
+    'association' => [
+        'association' => 'A Associação',
+        'world' => 'A associação WJJC Portugal é uma organização sem fins lucrativos fundada em 2024 e cuja missão é a disseminação e
+                                desenvolvimento do Kishidō Ju-Jitsu pelo território nacional.',
+    ],
+    'affiliations' => [
+        'filition' => 'Filiações',
+        'federation' => 'Federação Ju-Jitsu e Disciplinas Associadas Portugal',
+        'national' => 'Nacional',
+    ],
+    'sponsors' => [
+        'construction' => 'Em Construção',
+        'textbig' => 'Estamos a atualizar as informações sobre os nossos patrocinadores. Agradecemos a sua paciência e
+                            em breve teremos novidades para partilhar. Enquanto isso, sinta-se à vontade para voltar à
+                            nossa página inicial.',
     ],
     'description' => 'WJJC PORTUGAL',
     'keywords' => 'wjjc, wjjcportugal, wjjcinternational, ju-jitsu',
@@ -184,7 +203,7 @@ return [
         'wjjc-internacional' => '>WJJC Portugal',
         'we' => 'A nossa',
         'history' => 'História',
-        'world' => 'A Associação WJJC Portugal é uma organização sem fins lucrativos fundada em 2024 e cuja missão é a disseminação e
+        'world' => 'A WJJC Portugal é uma organização sem fins lucrativos e cuja missão é a disseminação e
                                 desenvolvimento do Kishidō Ju-Jitsu pelo território nacional.',
         'organization' => 'A nossa filosofia é
                                 que a complementaridade será sempre uma poderosa ferramenta de crescimento e no qual através

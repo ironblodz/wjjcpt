@@ -16,6 +16,23 @@ class PagesController extends Controller
         return view('layouts.wjjc');
     }
 
+    public function showAssociation()
+    {
+        return view('layouts.association');
+    }
+
+    public function showAffiliations()
+    {
+        return view('layouts.affiliations');
+    }
+
+    public function showSponsors()
+    {
+        return view('layouts.sponsors');
+    }
+
+
+
     public function showWjjcGallery()
     {
         return view('layouts.wjjcgallery');

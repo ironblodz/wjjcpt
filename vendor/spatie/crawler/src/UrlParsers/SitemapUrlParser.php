@@ -20,15 +20,15 @@ class SitemapUrlParser implements UrlParser
         $this->crawler = $crawler;
     }
 
-    public function addFromHtml(string $html, UriInterface $foundOnUrl, ?UriInterface $originalUrl = null): void
+    public function addFromHtml(string $html, UriInterface $foundOnUrl): void
     {
         $allLinks = $this->extractLinksFromHtml($html, $foundOnUrl);
 
         collect($allLinks)
             ->filter(fn (Url $url) => $this->hasCrawlableScheme($url))
             ->map(fn (Url $url) => $this->normalizeUrl($url))
-            ->filter(function (Url $url) use ($foundOnUrl, $originalUrl) {
-                if (! $node = $this->crawler->addToDepthTree($url, $foundOnUrl, null, $originalUrl)) {
+            ->filter(function (Url $url) use ($foundOnUrl) {
+                if (! $node = $this->crawler->addToDepthTree($url, $foundOnUrl)) {
                     return false;
                 }
 

@@ -61,7 +61,6 @@ final class ApplicationForWrapperWorker
         private readonly ?string $teamcityFile,
         private readonly ?string $testdoxFile,
         private readonly bool $testdoxColor,
-        private readonly ?int $testdoxColumns,
     ) {
     }
 
@@ -74,7 +73,6 @@ final class ApplicationForWrapperWorker
             $name   = substr($testPath, $null + 1);
             assert($name !== '');
             $filter->addNameFilter($name);
-
             $testPath = substr($testPath, 0, $null);
         }
 
@@ -181,7 +179,7 @@ final class ApplicationForWrapperWorker
             $printer,
             EventFacade::instance(),
             false,
-            99999,
+            120,
             $this->configuration->source(),
         );
 
@@ -193,10 +191,7 @@ final class ApplicationForWrapperWorker
         }
 
         if (isset($this->testdoxFile)) {
-            $this->testdoxResultCollector = new TestResultCollector(
-                EventFacade::instance(),
-                $this->configuration->source(),
-            );
+            $this->testdoxResultCollector = new TestResultCollector(EventFacade::instance());
         }
 
         TestResultFacade::init();
@@ -224,7 +219,6 @@ final class ApplicationForWrapperWorker
         $result = TestResultFacade::result();
         if (isset($this->testdoxResultCollector)) {
             assert(isset($this->testdoxFile));
-            assert(isset($this->testdoxColumns));
 
             (new TestDoxResultPrinter(DefaultPrinter::from($this->testdoxFile), $this->testdoxColor))->print(
                 $this->testdoxResultCollector->testMethodsGroupedByClass(),

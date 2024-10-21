@@ -2,15 +2,13 @@
 
 namespace Spatie\Robots;
 
-use InvalidArgumentException;
-
 class Robots
 {
-    protected ?RobotsTxt $robotsTxt;
+    protected RobotsTxt | null $robotsTxt;
 
     public function __construct(
-        protected ?string $userAgent = null,
-        RobotsTxt|string|null $source = null,
+        protected string | null $userAgent = null,
+        RobotsTxt | string | null $source = null,
     ) {
         if ($source instanceof RobotsTxt) {
             $this->robotsTxt = $source;
@@ -21,7 +19,7 @@ class Robots
         }
     }
 
-    public function withTxt(RobotsTxt|string $source): self
+    public function withTxt(RobotsTxt | string $source): self
     {
         $this->robotsTxt = $source instanceof RobotsTxt
                                 ? $source
@@ -30,12 +28,12 @@ class Robots
         return $this;
     }
 
-    public static function create(?string $userAgent = null, ?string $source = null): self
+    public static function create(string $userAgent = null, string $source = null): self
     {
         return new self($userAgent, $source);
     }
 
-    public function mayIndex(string $url, ?string $userAgent = null): bool
+    public function mayIndex(string $url, string $userAgent = null): bool
     {
         $userAgent = $userAgent ?? $this->userAgent;
 

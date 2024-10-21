@@ -214,7 +214,6 @@ class Analytics
         int $offset = 0,
         ?FilterExpression $dimensionFilter = null,
         bool $keepEmptyRows = false,
-        ?FilterExpression $metricFilter = null,
     ): Collection {
         return $this->client->get(
             $this->propertyId,
@@ -225,8 +224,7 @@ class Analytics
             $orderBy,
             $offset,
             $dimensionFilter,
-            $keepEmptyRows,
-            $metricFilter
+            $keepEmptyRows
         );
     }
 }

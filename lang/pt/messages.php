@@ -180,16 +180,11 @@ return [
         'country' => 'Países',
         'friends' => 'Membros Amigos',
     ],
-    'association' => [
-        'wjjc-association' => '>A Associação da WJJC Portugal',
-        'world_association' => 'A Associação WJJC Portugal é uma organização sem fins lucrativos fundada em 2024 e cuja missão é a disseminação e
-        desenvolvimento do Kishidō Ju-Jitsu pelo território nacional.',
-    ],
     'wjjcpt' => [
         'wjjc-internacional' => '>WJJC Portugal',
         'we' => 'A nossa',
         'history' => 'História',
-        'world' => 'A WJJC Portugal é uma organização sem fins lucrativos e cuja missão é a disseminação e
+        'world' => 'A Associação WJJC Portugal é uma organização sem fins lucrativos fundada em 2024 e cuja missão é a disseminação e
                                 desenvolvimento do Kishidō Ju-Jitsu pelo território nacional.',
         'organization' => 'A nossa filosofia é
                                 que a complementaridade será sempre uma poderosa ferramenta de crescimento e no qual através

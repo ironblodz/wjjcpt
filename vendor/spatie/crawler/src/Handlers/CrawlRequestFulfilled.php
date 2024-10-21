@@ -3,8 +3,6 @@
 namespace Spatie\Crawler\Handlers;
 
 use Exception;
-use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Uri;
 use GuzzleHttp\Psr7\Utils;
 use GuzzleHttp\RedirectMiddleware;
@@ -17,7 +15,6 @@ use Spatie\Crawler\CrawlProfiles\CrawlSubdomains;
 use Spatie\Crawler\CrawlUrl;
 use Spatie\Crawler\ResponseWithCachedBody;
 use Spatie\Crawler\UrlParsers\UrlParser;
-use Symfony\Component\Process\Exception\ProcessFailedException;
 
 class CrawlRequestFulfilled
 {
@@ -32,10 +29,6 @@ class CrawlRequestFulfilled
     public function __invoke(ResponseInterface $response, $index)
     {
         $body = $this->getBody($response);
-        if (empty($body)) {
-            usleep($this->crawler->getDelayBetweenRequests());
-            return;
-        }
 
         $robots = new CrawlerRobots(
             $response->getHeaders(),
@@ -46,19 +39,7 @@ class CrawlRequestFulfilled
         $crawlUrl = $this->crawler->getCrawlQueue()->getUrlById($index);
 
         if ($this->crawler->mayExecuteJavaScript()) {
-            try {
-                $body = $this->getBodyAfterExecutingJavaScript($crawlUrl->url);
-            } catch (ProcessFailedException $exception) {
-                $request = new Request('GET', $crawlUrl->url);
-                $exception = new RequestException($exception->getMessage(), $request);
-                $crawlUrl = $this->crawler->getCrawlQueue()->getUrlById($index);
-
-                $this->crawler->getCrawlObservers()->crawlFailed($crawlUrl, $exception);
-
-                usleep($this->crawler->getDelayBetweenRequests());
-
-                return;
-            }
+            $body = $this->getBodyAfterExecutingJavaScript($crawlUrl->url);
 
             $response = $response->withBody(Utils::streamFor($body));
         }
@@ -81,9 +62,8 @@ class CrawlRequestFulfilled
         }
 
         $baseUrl = $this->getBaseUrl($response, $crawlUrl);
-        $originalUrl = $crawlUrl->url;
 
-        $this->urlParser->addFromHtml($body, $baseUrl, $originalUrl);
+        $this->urlParser->addFromHtml($body, $baseUrl);
 
         usleep($this->crawler->getDelayBetweenRequests());
     }

@@ -63,7 +63,8 @@ final class ResultPrinter
         {
             public function __construct(
                 private readonly OutputInterface $output,
-            ) {}
+            ) {
+            }
 
             public function print(string $buffer): void
             {
@@ -78,7 +79,9 @@ final class ResultPrinter
                 $this->output->write(OutputFormatter::escape($buffer));
             }
 
-            public function flush(): void {}
+            public function flush(): void
+            {
+            }
         };
 
         $this->compactPrinter = CompactPrinter::default();
@@ -169,7 +172,7 @@ final class ResultPrinter
             return;
         }
 
-        $state = (new StateGenerator)->fromPhpUnitTestResult($this->passedTests, $testResult);
+        $state = (new StateGenerator())->fromPhpUnitTestResult($this->passedTests, $testResult);
 
         $this->compactPrinter->errors($state);
         $this->compactPrinter->recap($state, $testResult, $duration, $this->options);

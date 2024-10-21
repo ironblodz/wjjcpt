@@ -6,8 +6,8 @@ use Exception;
 
 class UnsuccessfulResponse extends Exception
 {
-    public static function make(string $url, string|int $code): static
+    public function __construct($url, $code)
     {
-        return new static("The given url `{$url}` responds with code {$code}");
+        parent::__construct("The given url `{$url}` responds with code {$code}");
     }
 }

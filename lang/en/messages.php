@@ -173,10 +173,8 @@ the character of practitioners, especially children, teenagers and young people.
         'wjjc-internacional' => 'WJJC Portugal',
         'we' => 'Our',
         'history' => 'History',
-        'world' => 'WJJC Portugal is a non-profit organization whose mission is to propagate and
-                                development of Kishidō Ju-Jitsu across the national territory.',
-        'world_association' => 'The WJJC Portugal Association is a non-profit organization founded in 2024 and whose mission is to disseminate and
-                                development of Kishidō Ju-Jitsu across the national territory.',
+        'world' => 'The WJJC Portugal Association is a non-profit organization founded in 2024 and whose mission is the spread and development
+of Kishidō Ju-Jitsu throughout Portugal.',
         'organization' => 'Our philosophy is that complementarity will always be a powerful tool for growth and that
 by sharing knowledge, we all win because we all grow.
 ',

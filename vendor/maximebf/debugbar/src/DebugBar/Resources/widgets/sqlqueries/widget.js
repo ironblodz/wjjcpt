@@ -20,12 +20,8 @@
             var code = $(el).parent('li').find('code').get(0);
             var copy = function () {
                 try {
-                    if (document.execCommand('copy')) {
-                        $(el).addClass(csscls('copy-clipboard-check'));
-                        setTimeout(function(){
-                            $(el).removeClass(csscls('copy-clipboard-check'));
-                        }, 2000)
-                    }
+                    document.execCommand('copy');
+                    alert('Query copied to the clipboard');
                 } catch (err) {
                     console.log('Oops, unable to copy');
                 }
@@ -120,11 +116,10 @@
                     li.addClass(csscls('error'));
                     li.append($('<span />').addClass(csscls('error')).text("[" + stmt.error_code + "] " + stmt.error_message));
                 }
-                if ((!stmt.type || stmt.type === 'query')) {
+                if ((!stmt.type || stmt.type === 'query') && stmt.show_copy !== false) {
                     $('<span title="Copy to clipboard" />')
                         .addClass(csscls('copy-clipboard'))
                         .css('cursor', 'pointer')
-                        .html("&#8203;")
                         .on('click', function (event) {
                             self.onCopyToClipboard(this);
                             event.stopPropagation();
@@ -133,13 +128,13 @@
                 }
                 if (typeof(stmt.xdebug_link) !== 'undefined' && stmt.xdebug_link) {
                     var header = $('<span title="Filename" />').addClass(csscls('filename')).text(stmt.xdebug_link.filename + ( stmt.xdebug_link.line ? "#" + stmt.xdebug_link.line : ''));
-                    $('<a href="' + stmt.xdebug_link.url + '"></a>').on('click', function () {
-                        event.stopPropagation();
-                        if (stmt.xdebug_link.ajax) {                            
+                    if (stmt.xdebug_link.ajax) {
+                        $('<a title="' + stmt.xdebug_link.url + '"></a>').on('click', function () {
                             fetch(stmt.xdebug_link.url);
-                            event.preventDefault();
-                        }
-                    }).addClass(csscls('editor-link')).appendTo(header);
+                        }).addClass(csscls('editor-link')).appendTo(header);
+                    } else {
+                        $('<a href="' + stmt.xdebug_link.url + '"></a>').addClass(csscls('editor-link')).appendTo(header);
+                    }
                     header.appendTo(li);
                 }
                 var table = $('<table></table>').addClass(csscls('params'));

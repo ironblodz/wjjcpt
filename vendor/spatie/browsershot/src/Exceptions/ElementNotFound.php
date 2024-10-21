@@ -6,8 +6,8 @@ use Exception;
 
 class ElementNotFound extends Exception
 {
-    public static function make(string $selector): static
+    public function __construct($selector)
     {
-        return new static("The given selector `{$selector} did not match any elements");
+        parent::__construct("The given selector `{$selector} did not match any elements");
     }
 }

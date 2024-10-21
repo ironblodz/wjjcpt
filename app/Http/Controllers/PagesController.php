@@ -26,16 +26,6 @@ class PagesController extends Controller
         return view('layouts.wjjcportugal');
     }
 
-    public function showFiliacao()
-    {
-        return view('layouts.filiacao');
-    }
-
-    public function showAssociation()
-    {
-        return view('layouts.association');
-    }
-
     public function showKishido()
     {
         return view('layouts.kishido');

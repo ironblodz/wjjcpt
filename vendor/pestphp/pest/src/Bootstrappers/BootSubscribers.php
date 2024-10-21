@@ -32,7 +32,8 @@ final class BootSubscribers implements Bootstrapper
      */
     public function __construct(
         private readonly Container $container,
-    ) {}
+    ) {
+    }
 
     /**
      * Boots the list of Subscribers.

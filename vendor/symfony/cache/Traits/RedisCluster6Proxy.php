@@ -25,7 +25,6 @@ class_exists(\Symfony\Component\VarExporter\Internal\LazyObjectState::class);
  */
 class RedisCluster6Proxy extends \RedisCluster implements ResetInterface, LazyObjectInterface
 {
-    use RedisCluster6ProxyTrait;
     use LazyProxyTrait {
         resetLazyObject as reset;
     }
@@ -655,6 +654,11 @@ class RedisCluster6Proxy extends \RedisCluster implements ResetInterface, LazyOb
     public function pttl($key): \RedisCluster|false|int
     {
         return ($this->lazyObjectState->realInstance ??= ($this->lazyObjectState->initializer)())->pttl(...\func_get_args());
+    }
+
+    public function publish($channel, $message): \RedisCluster|bool
+    {
+        return ($this->lazyObjectState->realInstance ??= ($this->lazyObjectState->initializer)())->publish(...\func_get_args());
     }
 
     public function pubsub($key_or_address, ...$values): mixed

@@ -20,45 +20,34 @@ namespace Spatie\Browsershot;
 class ChromiumResult
 {
     protected string $result;
+    protected string|null $exception;
 
-    protected ?string $exception;
-
-    /** @var null|array{
-     *     type: string,
-     *     message: string,
-     *     location: array,
-     *     stackTrace: string
-     * }
+    /**
+     * @var null|array{type: string, message: string, location: array, stackTrace: string}
      */
-    protected ?array $consoleMessages;
+    protected null|array $consoleMessages;
 
-    /** @var null|array{url: string} */
-    protected ?array $requestsList;
-
-    /** * @var null|array{
-     *     status: int,
-     *     url: string
-     * }
+    /**
+     * @var null|array{url: string}
      */
-    protected ?array $failedRequests;
+    protected null|array $requestsList;
 
-    /** * @var null|array{
-     *     name: string,
-     *     message: string
-     * }
+    /**
+     * @var null|array{status: int, url: string}
      */
-    protected ?array $pageErrors;
+    protected null|array $failedRequests;
 
-    /** @var null|array{
-     *     url: string,
-     *     status: int,
-     *     statusText: string,
-     *      headers: array
-     * }
+    /**
+     * @var null|array{name: string, message: string}
      */
-    protected ?array $redirectHistory;
+    protected null|array $pageErrors;
 
-    public function __construct(?array $output)
+    /**
+     * @var null|array{url: string, status: int, statusText: string, headers: array}
+     */
+    protected null|array $redirectHistory;
+
+    public function __construct(array|null $output)
     {
         $this->result = $output['result'] ?? '';
         $this->exception = $output['exception'] ?? null;
@@ -74,19 +63,15 @@ class ChromiumResult
         return $this->result;
     }
 
-    public function getException(): ?string
+    public function getException(): string|null
     {
         return $this->exception;
     }
 
-    /** @return null|array{
-     *     type: string,
-     *      message: string,
-     *     location: array,
-     *     stackTrace: string
-     * }
+    /**
+     * @return null|array{type: string, message: string, location: array, stackTrace: string}
      */
-    public function getConsoleMessages(): ?array
+    public function getConsoleMessages(): array|null
     {
         return $this->consoleMessages;
     }
@@ -94,7 +79,7 @@ class ChromiumResult
     /**
      * @return null|array{url: string}
      */
-    public function getRequestsList(): ?array
+    public function getRequestsList(): array|null
     {
         return $this->requestsList;
     }
@@ -102,29 +87,23 @@ class ChromiumResult
     /**
      * @return null|array{status: int, url: string}
      */
-    public function getFailedRequests(): ?array
+    public function getFailedRequests(): array|null
     {
         return $this->failedRequests;
     }
 
-    /** @return null|array{
-     *     name: string,
-     *     message: string
-     * }
+    /**
+     * @return null|array{name: string, message: string}
      */
-    public function getPageErrors(): ?array
+    public function getPageErrors(): array|null
     {
         return $this->pageErrors;
     }
 
-    /** @return null|array{
-     *     url: string,
-     *     status: int,
-     *     statusText: string,
-     *     headers: array
-     * }
+    /**
+     * @return null|array{url: string, status: int, statusText: string, headers: array}
      */
-    public function getRedirectHistory(): ?array
+    public function getredirectHistory(): array|null
     {
         return $this->redirectHistory;
     }

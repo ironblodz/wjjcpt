@@ -2,155 +2,140 @@
 
 namespace Spatie\Browsershot;
 
-use Spatie\Browsershot\Enums\Polling;
 use Spatie\Browsershot\Exceptions\CouldNotTakeBrowsershot;
 use Spatie\Browsershot\Exceptions\ElementNotFound;
 use Spatie\Browsershot\Exceptions\FileDoesNotExistException;
 use Spatie\Browsershot\Exceptions\FileUrlNotAllowed;
 use Spatie\Browsershot\Exceptions\HtmlIsNotAllowedToContainFile;
 use Spatie\Browsershot\Exceptions\UnsuccessfulResponse;
+use Spatie\Image\Image;
+use Spatie\Image\Manipulations;
 use Spatie\TemporaryDirectory\TemporaryDirectory;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
 
-/** @mixin \Spatie\Image\Image */
+/** @mixin \Spatie\Image\Manipulations */
 class Browsershot
 {
-    protected ?string $nodeBinary = null;
+    protected $nodeBinary = null;
+    protected $npmBinary = null;
+    protected $nodeModulePath = null;
+    protected $includePath = '$PATH:/usr/local/bin:/opt/homebrew/bin';
+    protected $binPath = null;
+    protected $html = '';
+    protected $noSandbox = false;
+    protected $proxyServer = '';
+    protected $showBackground = false;
+    protected $showScreenshotBackground = true;
+    protected $scale = null;
+    protected $screenshotType = 'png';
+    protected $screenshotQuality = null;
+    protected $taggedPdf = false;
+    protected $temporaryHtmlDirectory;
+    protected $timeout = 60;
+    protected $transparentBackground = false;
+    protected $url = '';
+    protected $postParams = [];
+    protected $additionalOptions = [];
+    protected $temporaryOptionsDirectory;
+    protected $tempPath = '';
+    protected $writeOptionsToFile = false;
+    protected $chromiumArguments = [];
 
-    protected ?string $npmBinary = null;
+    /**
+     * @var ChromiumResult|null
+     */
+    protected ChromiumResult|null $chromiumResult = null;
 
-    protected ?string $nodeModulePath = null;
+    /** @var \Spatie\Image\Manipulations */
+    protected $imageManipulations;
 
-    protected string $includePath = '$PATH:/usr/local/bin:/opt/homebrew/bin';
-
-    protected ?string $binPath = null;
-
-    protected string $html = '';
-
-    protected bool $noSandbox = false;
-
-    protected string $proxyServer = '';
-
-    protected bool $showBackground = false;
-
-    protected bool $showScreenshotBackground = true;
-
-    protected ?float $scale = null;
-
-    protected string $screenshotType = 'png';
-
-    protected ?int $screenshotQuality = null;
-
-    protected bool $taggedPdf = false;
-
-    protected ?TemporaryDirectory $temporaryHtmlDirectory = null;
-
-    protected int $timeout = 60;
-
-    protected bool $transparentBackground = false;
-
-    protected string $url = '';
-
-    protected array $postParams = [];
-
-    protected array $additionalOptions = [];
-
-    protected ?TemporaryDirectory $temporaryOptionsDirectory = null;
-
-    protected string $tempPath = '';
-
-    protected bool $writeOptionsToFile = false;
-
-    protected array $chromiumArguments = [];
-
-    protected ?ChromiumResult $chromiumResult = null;
-
-    protected ImageManipulations $imageManipulations;
+    public const POLLING_REQUEST_ANIMATION_FRAME = 'raf';
+    public const POLLING_MUTATION = 'mutation';
 
     public static function url(string $url): static
     {
-        return (new static)->setUrl($url);
+        return (new static())->setUrl($url);
     }
 
     public static function html(string $html): static
     {
-        return (new static)->setHtml($html);
+        return (new static())->setHtml($html);
     }
 
     public static function htmlFromFilePath(string $filePath): static
     {
-        return (new static)->setHtmlFromFilePath($filePath);
+        return (new static())->setHtmlFromFilePath($filePath);
     }
 
     public function __construct(string $url = '', bool $deviceEmulate = false)
     {
         $this->url = $url;
 
+        $this->imageManipulations = new Manipulations();
+
         if (! $deviceEmulate) {
             $this->windowSize(800, 600);
         }
-
-        $this->imageManipulations = new ImageManipulations;
     }
 
-    public function setNodeBinary(string $nodeBinary): static
+    public function setNodeBinary(string $nodeBinary)
     {
         $this->nodeBinary = $nodeBinary;
 
         return $this;
     }
 
-    public function setNpmBinary(string $npmBinary): static
+    public function setNpmBinary(string $npmBinary)
     {
         $this->npmBinary = $npmBinary;
 
         return $this;
     }
 
-    public function setIncludePath(string $includePath): static
+    public function setIncludePath(string $includePath)
     {
         $this->includePath = $includePath;
 
         return $this;
     }
 
-    public function setBinPath(string $binPath): static
+    public function setBinPath(string $binPath)
     {
         $this->binPath = $binPath;
 
         return $this;
     }
 
-    public function setNodeModulePath(string $nodeModulePath): static
+    public function setNodeModulePath(string $nodeModulePath)
     {
         $this->nodeModulePath = $nodeModulePath;
 
         return $this;
     }
 
-    public function setChromePath(string $executablePath): static
+    public function setChromePath(string $executablePath)
     {
         $this->setOption('executablePath', $executablePath);
 
         return $this;
     }
 
-    public function setCustomTempPath(string $tempPath): static
+    public function setCustomTempPath(string $tempPath)
     {
         $this->tempPath = $tempPath;
 
         return $this;
     }
 
-    public function post(array $postParams = []): static
+    public function post(array $postParams = [])
     {
         $this->postParams = $postParams;
 
         return $this;
     }
 
-    public function useCookies(array $cookies, ?string $domain = null): static
+    public function useCookies(array $cookies, string $domain = null)
     {
         if (! count($cookies)) {
             return $this;
@@ -173,28 +158,28 @@ class Browsershot
         return $this;
     }
 
-    public function setExtraHttpHeaders(array $extraHTTPHeaders): static
+    public function setExtraHttpHeaders(array $extraHTTPHeaders)
     {
         $this->setOption('extraHTTPHeaders', $extraHTTPHeaders);
 
         return $this;
     }
 
-    public function setExtraNavigationHttpHeaders(array $extraNavigationHTTPHeaders): static
+    public function setExtraNavigationHttpHeaders(array $extraNavigationHTTPHeaders)
     {
         $this->setOption('extraNavigationHTTPHeaders', $extraNavigationHTTPHeaders);
 
         return $this;
     }
 
-    public function authenticate(string $username, string $password): static
+    public function authenticate(string $username, string $password)
     {
         $this->setOption('authentication', compact('username', 'password'));
 
         return $this;
     }
 
-    public function click(string $selector, string $button = 'left', int $clickCount = 1, int $delay = 0): static
+    public function click(string $selector, string $button = 'left', int $clickCount = 1, int $delay = 0)
     {
         $clicks = $this->additionalOptions['clicks'] ?? [];
 
@@ -205,7 +190,7 @@ class Browsershot
         return $this;
     }
 
-    public function selectOption(string $selector, string $value = ''): static
+    public function selectOption(string $selector, string $value = '')
     {
         $dropdownSelects = $this->additionalOptions['selects'] ?? [];
 
@@ -216,7 +201,7 @@ class Browsershot
         return $this;
     }
 
-    public function type(string $selector, string $text = '', int $delay = 0): static
+    public function type(string $selector, string $text = '', int $delay = 0)
     {
         $types = $this->additionalOptions['types'] ?? [];
 
@@ -227,24 +212,32 @@ class Browsershot
         return $this;
     }
 
-    public function waitUntilNetworkIdle(bool $strict = true): static
+    /**
+     * @deprecated This option is no longer supported by modern versions of Puppeteer.
+     */
+    public function setNetworkIdleTimeout(int $networkIdleTimeout)
+    {
+        $this->setOption('networkIdleTimeout');
+
+        return $this;
+    }
+
+    public function waitUntilNetworkIdle(bool $strict = true)
     {
         $this->setOption('waitUntil', $strict ? 'networkidle0' : 'networkidle2');
 
         return $this;
     }
 
-    public function waitForFunction(string $function, ?Polling $polling = null, int $timeout = 0): static
+    public function waitForFunction(string $function, $polling = self::POLLING_REQUEST_ANIMATION_FRAME, int $timeout = 0)
     {
-        $polling ??= Polling::RequestAnimationFrame;
-
-        $this->setOption('functionPolling', $polling->value);
+        $this->setOption('functionPolling', $polling);
         $this->setOption('functionTimeout', $timeout);
 
         return $this->setOption('function', $function);
     }
 
-    public function waitForSelector(string $selector, array $options = []): static
+    public function waitForSelector(string $selector, array $options = [])
     {
         $this->setOption('waitForSelector', $selector);
 
@@ -255,9 +248,9 @@ class Browsershot
         return $this;
     }
 
-    public function setUrl(string $url): static
+    public function setUrl(string $url)
     {
-        if (str_starts_with(strtolower($url), 'file://')) {
+        if (Helpers::stringStartsWith(strtolower($url), 'file://')) {
             throw FileUrlNotAllowed::make();
         }
 
@@ -267,11 +260,10 @@ class Browsershot
         return $this;
     }
 
-    public function setHtmlFromFilePath(string $filePath): static
+    public function setHtmlFromFilePath(string $filePath): self
     {
-
-        if (! file_exists($filePath)) {
-            throw FileDoesNotExistException::make($filePath);
+        if (false === file_exists($filePath)) {
+            throw new FileDoesNotExistException($filePath);
         }
 
         $this->url = 'file://'.$filePath;
@@ -280,16 +272,16 @@ class Browsershot
         return $this;
     }
 
-    public function setProxyServer(string $proxyServer): static
+    public function setProxyServer(string $proxyServer)
     {
         $this->proxyServer = $proxyServer;
 
         return $this;
     }
 
-    public function setHtml(string $html): static
+    public function setHtml(string $html)
     {
-        if (str_contains(strtolower($html), 'file://')) {
+        if (Helpers::stringContains(strtolower($html), 'file://')) {
             throw HtmlIsNotAllowedToContainFile::make();
         }
 
@@ -301,70 +293,70 @@ class Browsershot
         return $this;
     }
 
-    public function clip(int $x, int $y, int $width, int $height): static
+    public function clip(int $x, int $y, int $width, int $height)
     {
         return $this->setOption('clip', compact('x', 'y', 'width', 'height'));
     }
 
-    public function preventUnsuccessfulResponse(bool $preventUnsuccessfulResponse = true): static
+    public function preventUnsuccessfulResponse(bool $preventUnsuccessfulResponse = true)
     {
         return $this->setOption('preventUnsuccessfulResponse', $preventUnsuccessfulResponse);
     }
 
-    public function select($selector, $index = 0): static
+    public function select($selector, $index = 0)
     {
         $this->selectorIndex($index);
 
         return $this->setOption('selector', $selector);
     }
 
-    public function selectorIndex(int $index): static
+    public function selectorIndex(int $index)
     {
         return $this->setOption('selectorIndex', $index);
     }
 
-    public function showBrowserHeaderAndFooter(): static
+    public function showBrowserHeaderAndFooter()
     {
         return $this->setOption('displayHeaderFooter', true);
     }
 
-    public function hideBrowserHeaderAndFooter(): static
+    public function hideBrowserHeaderAndFooter()
     {
         return $this->setOption('displayHeaderFooter', false);
     }
 
-    public function hideHeader(): static
+    public function hideHeader()
     {
         return $this->headerHtml('<p></p>');
     }
 
-    public function hideFooter(): static
+    public function hideFooter()
     {
         return $this->footerHtml('<p></p>');
     }
 
-    public function headerHtml(string $html): static
+    public function headerHtml(string $html)
     {
         return $this->setOption('headerTemplate', $html);
     }
 
-    public function footerHtml(string $html): static
+    public function footerHtml(string $html)
     {
         return $this->setOption('footerTemplate', $html);
     }
 
-    public function deviceScaleFactor(int $deviceScaleFactor): static
+    public function deviceScaleFactor(int $deviceScaleFactor)
     {
         // Google Chrome currently supports values of 1, 2, and 3.
         return $this->setOption('viewport.deviceScaleFactor', max(1, min(3, $deviceScaleFactor)));
     }
 
-    public function fullPage(): static
+    public function fullPage()
     {
         return $this->setOption('fullPage', true);
     }
 
-    public function showBackground(): static
+    public function showBackground()
     {
         $this->showBackground = true;
         $this->showScreenshotBackground = true;
@@ -372,7 +364,7 @@ class Browsershot
         return $this;
     }
 
-    public function hideBackground(): static
+    public function hideBackground()
     {
         $this->showBackground = false;
         $this->showScreenshotBackground = false;
@@ -380,21 +372,21 @@ class Browsershot
         return $this;
     }
 
-    public function transparentBackground(): static
+    public function transparentBackground()
     {
         $this->transparentBackground = true;
 
         return $this;
     }
 
-    public function taggedPdf(): static
+    public function taggedPdf()
     {
         $this->taggedPdf = true;
 
         return $this;
     }
 
-    public function setScreenshotType(string $type, ?int $quality = null): static
+    public function setScreenshotType(string $type, int $quality = null)
     {
         $this->screenshotType = $type;
 
@@ -405,27 +397,27 @@ class Browsershot
         return $this;
     }
 
-    public function ignoreHttpsErrors(): static
+    public function ignoreHttpsErrors()
     {
         return $this->setOption('ignoreHttpsErrors', true);
     }
 
-    public function mobile(bool $mobile = true): static
+    public function mobile(bool $mobile = true)
     {
         return $this->setOption('viewport.isMobile', $mobile);
     }
 
-    public function touch(bool $touch = true): static
+    public function touch(bool $touch = true)
     {
         return $this->setOption('viewport.hasTouch', $touch);
     }
 
-    public function landscape(bool $landscape = true): static
+    public function landscape(bool $landscape = true)
     {
         return $this->setOption('landscape', $landscape);
     }
 
-    public function margins(float $top, float $right, float $bottom, float $left, string $unit = 'mm'): static
+    public function margins(float $top, float $right, float $bottom, float $left, string $unit = 'mm')
     {
         return $this->setOption('margin', [
             'top' => $top.$unit,
@@ -435,49 +427,44 @@ class Browsershot
         ]);
     }
 
-    public function noSandbox(): static
+    public function noSandbox()
     {
         $this->noSandbox = true;
 
         return $this;
     }
 
-    public function dismissDialogs(): static
+    public function dismissDialogs()
     {
         return $this->setOption('dismissDialogs', true);
     }
 
-    public function disableJavascript(): static
+    public function disableJavascript()
     {
         return $this->setOption('disableJavascript', true);
     }
 
-    public function disableImages(): static
+    public function disableImages()
     {
         return $this->setOption('disableImages', true);
     }
 
-    public function disableCaptureURLS(): static
-    {
-        return $this->setOption('disableCaptureURLS', true);
-    }
-
-    public function blockUrls($array): static
+    public function blockUrls($array)
     {
         return $this->setOption('blockUrls', $array);
     }
 
-    public function blockDomains($array): static
+    public function blockDomains($array)
     {
         return $this->setOption('blockDomains', $array);
     }
 
-    public function pages(string $pages): static
+    public function pages(string $pages)
     {
         return $this->setOption('pageRanges', $pages);
     }
 
-    public function paperSize(float $width, float $height, string $unit = 'mm'): static
+    public function paperSize(float $width, float $height, string $unit = 'mm')
     {
         return $this
             ->setOption('width', $width.$unit)
@@ -485,92 +472,89 @@ class Browsershot
     }
 
     // paper format
-    public function format(string $format): static
+    public function format(string $format)
     {
         return $this->setOption('format', $format);
     }
 
-    public function scale(float $scale): static
+    public function scale(float $scale)
     {
         $this->scale = $scale;
 
         return $this;
     }
 
-    public function timeout(int $timeout): static
+    public function timeout(int $timeout)
     {
         $this->timeout = $timeout;
+        $this->setOption('timeout', $timeout * 1000);
 
-        return $this->setOption('timeout', $timeout * 1000);
+        return $this;
     }
 
-    public function protocolTimeout(int $protocolTimeout): static
+    public function userAgent(string $userAgent)
     {
-        return $this->setOption('protocolTimeout', $protocolTimeout * 1000);
+        $this->setOption('userAgent', $userAgent);
+
+        return $this;
     }
 
-    public function userAgent(string $userAgent): static
+    public function device(string $device)
     {
-        return $this->setOption('userAgent', $userAgent);
+        $this->setOption('device', $device);
+
+        return $this;
     }
 
-    public function device(string $device): static
+    public function emulateMedia(?string $media)
     {
-        return $this->setOption('device', $device);
+        $this->setOption('emulateMedia', $media);
+
+        return $this;
     }
 
-    public function emulateMedia(?string $media): static
-    {
-        return $this->setOption('emulateMedia', $media);
-    }
-
-    public function newHeadless(): self
-    {
-        return $this->setOption('newHeadless', true);
-    }
-
-    public function windowSize(int $width, int $height): static
+    public function windowSize(int $width, int $height)
     {
         return $this
             ->setOption('viewport.width', $width)
             ->setOption('viewport.height', $height);
     }
 
-    public function setDelay(int $delayInMilliseconds): static
+    public function setDelay(int $delayInMilliseconds)
     {
         return $this->setOption('delay', $delayInMilliseconds);
     }
 
-    public function delay(int $delayInMilliseconds): static
+    public function delay(int $delayInMilliseconds)
     {
         return $this->setDelay($delayInMilliseconds);
     }
 
-    public function setUserDataDir(string $absolutePath): static
+    public function setUserDataDir(string $absolutePath)
     {
         return $this->addChromiumArguments(['user-data-dir' => $absolutePath]);
     }
 
-    public function userDataDir(string $absolutePath): static
+    public function userDataDir(string $absolutePath)
     {
         return $this->setUserDataDir($absolutePath);
     }
 
-    public function writeOptionsToFile(): static
+    public function writeOptionsToFile()
     {
         $this->writeOptionsToFile = true;
 
         return $this;
     }
 
-    public function setOption($key, $value): static
+    public function setOption($key, $value)
     {
         $this->arraySet($this->additionalOptions, $key, $value);
 
         return $this;
     }
 
-    public function addChromiumArguments(array $arguments): static
+    public function addChromiumArguments(array $arguments)
     {
         foreach ($arguments as $argument => $value) {
             if (is_numeric($argument)) {
@@ -590,7 +574,7 @@ class Browsershot
         return $this;
     }
 
-    public function save(string $targetPath): void
+    public function save(string $targetPath)
     {
         $extension = strtolower(pathinfo($targetPath, PATHINFO_EXTENSION));
 
@@ -599,9 +583,7 @@ class Browsershot
         }
 
         if ($extension === 'pdf') {
-            $this->savePdf($targetPath);
-
-            return;
+            return $this->savePdf($targetPath);
         }
 
         $command = $this->createScreenshotCommand($targetPath);
@@ -615,14 +597,13 @@ class Browsershot
         }
 
         if (! $this->imageManipulations->isEmpty()) {
-            $this->imageManipulations->apply($targetPath);
+            $this->applyManipulations($targetPath);
         }
     }
 
     public function bodyHtml(): string
     {
         $command = $this->createBodyHtmlCommand();
-
         $html = $this->callBrowser($command);
 
         $this->cleanupTemporaryHtmlFile();
@@ -633,7 +614,6 @@ class Browsershot
     public function base64Screenshot(): string
     {
         $command = $this->createScreenshotCommand();
-
         $encodedImage = $this->callBrowser($command);
 
         $this->cleanupTemporaryHtmlFile();
@@ -646,7 +626,6 @@ class Browsershot
         if ($this->imageManipulations->isEmpty()) {
 
             $command = $this->createScreenshotCommand();
-
             $encodedImage = $this->callBrowser($command);
 
             $this->cleanupTemporaryHtmlFile();
@@ -663,13 +642,11 @@ class Browsershot
         $temporaryDirectory->delete();
 
         return $screenshot;
-
     }
 
     public function pdf(): string
     {
         $command = $this->createPdfCommand();
-
         $encodedPdf = $this->callBrowser($command);
 
         $this->cleanupTemporaryHtmlFile();
@@ -680,7 +657,6 @@ class Browsershot
     public function savePdf(string $targetPath)
     {
         $command = $this->createPdfCommand($targetPath);
-
         $output = $this->callBrowser($command);
 
         $this->cleanupTemporaryHtmlFile();
@@ -693,7 +669,6 @@ class Browsershot
     public function base64pdf(): string
     {
         $command = $this->createPdfCommand();
-
         $encodedPdf = $this->callBrowser($command);
 
         $this->cleanupTemporaryHtmlFile();
@@ -704,7 +679,6 @@ class Browsershot
     public function evaluate(string $pageFunction): string
     {
         $command = $this->createEvaluateCommand($pageFunction);
-
         $evaluation = $this->callBrowser($command);
 
         $this->cleanupTemporaryHtmlFile();
@@ -715,16 +689,15 @@ class Browsershot
     /**
      * @return null|array{url: string}
      */
-    public function triggeredRequests(): ?array
+    public function triggeredRequests(): array|null
     {
         $requests = $this->chromiumResult?->getRequestsList();
 
-        if (! is_null($requests)) {
+        if ($requests) {
             return $requests;
         }
 
         $command = $this->createTriggeredRequestsListCommand();
-
         $this->callBrowser($command);
 
         $this->cleanupTemporaryHtmlFile();
@@ -733,18 +706,13 @@ class Browsershot
     }
 
     /**
-     * @return null|array{
-     *     url: string,
-     *     status: int,
-     *     statusText: string,
-     *     headers: array
-     * }
+     * @return null|array{url: string, status: int, statusText: string, headers: array}
      */
-    public function redirectHistory(): ?array
+    public function redirectHistory(): array|null
     {
-        $redirectHistory = $this->chromiumResult?->getRedirectHistory();
+        $redirectHistory = $this->chromiumResult?->getredirectHistory();
 
-        if (! is_null($redirectHistory)) {
+        if ($redirectHistory) {
             return $redirectHistory;
         }
 
@@ -752,21 +720,17 @@ class Browsershot
 
         $this->callBrowser($command);
 
-        return $this->chromiumResult?->getRedirectHistory();
+        return $this->chromiumResult?->getredirectHistory();
     }
 
     /**
-     * @return null|array{
-     *     type: string,
-     *     message: string,
-     *     location:array
-     * }
+     * @return null|array{type: string, message: string, location:array}
      */
-    public function consoleMessages(): ?array
+    public function consoleMessages(): array|null
     {
         $messages = $this->chromiumResult?->getConsoleMessages();
 
-        if (! is_null($messages)) {
+        if ($messages) {
             return $messages;
         }
 
@@ -782,11 +746,11 @@ class Browsershot
     /**
      * @return null|array{status: int, url: string}
      */
-    public function failedRequests(): ?array
+    public function failedRequests(): array|null
     {
         $requests = $this->chromiumResult?->getFailedRequests();
 
-        if (! is_null($requests)) {
+        if ($requests) {
             return $requests;
         }
 
@@ -802,11 +766,11 @@ class Browsershot
     /**
      * @return null|array{name: string, message: string}
      */
-    public function pageErrors(): ?array
+    public function pageErrors(): array|null
     {
         $pageErrors = $this->chromiumResult?->getPageErrors();
 
-        if (! is_null($pageErrors)) {
+        if ($pageErrors) {
             return $pageErrors;
         }
 
@@ -817,6 +781,13 @@ class Browsershot
         $this->cleanupTemporaryHtmlFile();
 
         return $this->chromiumResult?->getPageErrors();
+    }
+
+    public function applyManipulations(string $imagePath)
+    {
+        Image::load($imagePath)
+            ->manipulate($this->imageManipulations)
+            ->save();
     }
 
     public function createBodyHtmlCommand(): array
@@ -1014,7 +985,7 @@ class Browsershot
         return "file://{$temporaryHtmlFile}";
     }
 
-    protected function cleanupTemporaryHtmlFile(): void
+    protected function cleanupTemporaryHtmlFile()
     {
         if ($this->temporaryHtmlDirectory) {
             $this->temporaryHtmlDirectory->delete();
@@ -1030,7 +1001,7 @@ class Browsershot
         return "file://{$temporaryOptionsFile}";
     }
 
-    protected function cleanupTemporaryOptionsFile(): void
+    protected function cleanupTemporaryOptionsFile()
     {
         if ($this->temporaryOptionsDirectory) {
             $this->temporaryOptionsDirectory->delete();
@@ -1041,7 +1012,7 @@ class Browsershot
     {
         $fullCommand = $this->getFullCommand($command);
 
-        $process = $this->isWindows() ? new Process($fullCommand, null, $this->getWindowsEnv()) : Process::fromShellCommandline($fullCommand);
+        $process = $this->isWindows() ? new Process($fullCommand) : Process::fromShellCommandline($fullCommand);
 
         $process->setTimeout($this->timeout);
 
@@ -1055,11 +1026,7 @@ class Browsershot
         $this->chromiumResult = new ChromiumResult(json_decode($rawOutput, true));
 
         if ($process->isSuccessful()) {
-            $result = $this->chromiumResult?->getResult();
-
-            $this->cleanupTemporaryOptionsFile();
-
-            return $result;
+            return $this->chromiumResult?->getResult();
         }
 
         $this->cleanupTemporaryOptionsFile();
@@ -1068,27 +1035,17 @@ class Browsershot
         $errorOutput = $process->getErrorOutput();
 
         if ($exitCode === 3) {
-            throw UnsuccessfulResponse::make($this->url, $errorOutput ?? '');
+            throw new UnsuccessfulResponse($this->url, $errorOutput ?? '');
         }
 
         if ($exitCode === 2) {
-            throw ElementNotFound::make($this->additionalOptions['selector']);
+            throw new ElementNotFound($this->additionalOptions['selector']);
         }
 
         throw new ProcessFailedException($process);
     }
 
-    protected function getWindowsEnv(): array
-    {
-        return [
-            'LOCALAPPDATA' => getenv('LOCALAPPDATA'),
-            'Path' => getenv('Path'),
-            'SystemRoot' => getenv('SystemRoot'),
-            'USERPROFILE' => getenv('USERPROFILE'),
-        ];
-    }
-
-    protected function getFullCommand(array $command): array|string
+    protected function getFullCommand(array $command)
     {
         $nodeBinary = $this->nodeBinary ?: 'node';
 
@@ -1144,7 +1101,7 @@ class Browsershot
         return escapeshellarg($command);
     }
 
-    protected function arraySet(array &$array, string $key, mixed $value): array
+    protected function arraySet(array &$array, string $key, $value): array
     {
         if (is_null($key)) {
             return $array = $value;
@@ -1170,27 +1127,32 @@ class Browsershot
         return $array;
     }
 
-    public function initialPageNumber(int $initialPage = 1): static
+    public function initialPageNumber(int $initialPage = 1)
     {
         return $this
             ->setOption('initialPageNumber', ($initialPage - 1))
-            ->pages("{$initialPage}-");
+            ->pages($initialPage.'-');
     }
 
-    public function getOutput(): ?ChromiumResult
+    public function getOutput(): ChromiumResult|null
     {
         return $this->chromiumResult;
     }
 
-    protected function isWindows(): bool
+    private function isWindows()
     {
         return strtoupper(substr(PHP_OS, 0, 3)) === 'WIN';
     }
 
-    protected function getFinalContentsUrl(): string
+    private function getFinalContentsUrl(): string
     {
-        return $this->html
-            ? $this->createTemporaryHtmlFile()
-            : $this->url;
+        $url = $this->html ? $this->createTemporaryHtmlFile() : $this->url;
+
+        return $url;
+    }
+
+    public function newHeadless(): self
+    {
+        return $this->setOption('newHeadless', true);
     }
 }

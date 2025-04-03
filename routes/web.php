@@ -6,6 +6,8 @@ use App\Http\Controllers\PagesController;
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ProfileController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,8 +53,6 @@ Route::get('/certification', [PagesController::class, 'showCertification'])->nam
 
 Route::get('/logo', [PagesController::class, 'showLogo'])->name('logo.show');
 
-
-
 // web.php
 
 Route::get('/lang/{locale}', function ($locale) {
@@ -62,3 +62,15 @@ Route::get('/lang/{locale}', function ($locale) {
     // Redirecione de volta para a página anterior
     return back();
 })->name('change.language');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__ . '/auth.php';

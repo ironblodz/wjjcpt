@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
-use App\Http\Controllers\Admin\PhotoController as AdminPhotoController;
 use App\Http\Controllers\ContactController;
 
 use App\Http\Controllers\PagesController;
@@ -74,5 +72,4 @@ Route::middleware('auth')->group(function () {
         Route::resource('categories', CategoryController::class);
     });
 });
-
 require __DIR__ . '/auth.php';

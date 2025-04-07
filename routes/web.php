@@ -39,7 +39,7 @@ Route::get('/events', [PagesController::class, 'showEvents'])->name('event.show'
 
 Route::get('/wjjcgallery', [PagesController::class, 'showWjjcGallery'])->name('wjjcgallery.show');
 
-Route::get('/workout', [PagesController::class, 'showWorkout'])->name('workout.show');
+Route::get('/workout', [App\Http\Controllers\WorkoutController::class, 'index'])->name('workout.show');
 
 Route::get('/certification', [PagesController::class, 'showCertification'])->name('certification.show');
 

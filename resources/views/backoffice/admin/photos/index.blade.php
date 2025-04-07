@@ -18,10 +18,11 @@
                             <thead class="bg-gray-50">
                                 <tr>
                                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
-                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Image</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Cover Image</th>
                                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Title</th>
                                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Event</th>
                                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Gallery</th>
                                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                                 </tr>
                             </thead>
@@ -36,11 +37,19 @@
                                         <td class="px-6 py-4 whitespace-nowrap">{{ $photo->event_name }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap">{{ $photo->category->name }}</td>
                                         <td class="px-6 py-4 whitespace-nowrap">
+                                            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">
+                                                {{ $photo->images->count() }} images
+                                            </span>
+                                            <a href="{{ route('backoffice.admin.photos.show', $photo) }}" class="text-blue-600 hover:underline ml-2">
+                                                View Gallery
+                                            </a>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap">
                                             <a href="{{ route('backoffice.admin.photos.edit', $photo) }}" class="px-3 py-1 bg-blue-500 text-white rounded text-sm hover:bg-blue-600">Edit</a>
                                             <form action="{{ route('backoffice.admin.photos.destroy', $photo) }}" method="POST" class="inline-block ml-2">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="px-3 py-1 bg-red-500 text-white rounded text-sm hover:bg-red-600" onclick="return confirm('Are you sure?')">Delete</button>
+                                                <button type="submit" class="px-3 py-1 bg-red-500 text-white rounded text-sm hover:bg-red-600" onclick="return confirm('Are you sure you want to delete this entire gallery?')">Delete</button>
                                             </form>
                                         </td>
                                     </tr>

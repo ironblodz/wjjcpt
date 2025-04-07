@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Photo;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\PhotoImage;
 use Illuminate\Support\Facades\Storage;
 
 class PhotoController extends Controller
@@ -38,20 +39,54 @@ class PhotoController extends Controller
             'title' => 'required|string|max:255',
             'event_name' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'images.*' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        $imagePath = $request->file('image')->store('photos', 'public');
+        // Verificar se há imagens antes de criar o registro
+        if (!$request->hasFile('images')) {
+            return redirect()->back()->with('error', 'Please upload at least one image.');
+        }
 
-        Photo::create([
+        // Processar a primeira imagem primeiro para obter o image_path
+        $firstImage = $request->file('images')[0];
+        $firstImagePath = $firstImage->store('photos', 'public');
+
+        // Criar o registro principal da foto com o image_path já definido
+        $photo = Photo::create([
             'category_id' => $request->category_id,
             'title' => $request->title,
             'event_name' => $request->event_name,
             'description' => $request->description,
-            'image_path' => $imagePath,
+            'image_path' => $firstImagePath, // Definir o image_path com a primeira imagem
         ]);
 
-        return redirect()->route('backoffice.admin.photos.index')->width('success', 'Photo uploaded successfully.');
+        // Salvar a primeira imagem na tabela photo_images
+        $photoImage = new PhotoImage([
+            'photo_id' => $photo->id,
+            'image_path' => $firstImagePath,
+            'is_primary' => true, // A primeira imagem será a principal
+        ]);
+        $photoImage->save();
+
+        // Processar as imagens restantes, se houver
+        if (count($request->file('images')) > 1) {
+            foreach ($request->file('images') as $index => $imageFile) {
+                // Pular a primeira imagem, pois já foi processada
+                if ($index === 0) continue;
+
+                $imagePath = $imageFile->store('photos', 'public');
+
+                // Salvar cada imagem associada à foto
+                $photoImage = new PhotoImage([
+                    'photo_id' => $photo->id,
+                    'image_path' => $imagePath,
+                    'is_primary' => false,
+                ]);
+                $photoImage->save();
+            }
+        }
+
+        return redirect()->route('backoffice.admin.photos.index')->with('success', 'Photo gallery uploaded successfully.');
     }
 
     /**
@@ -81,7 +116,8 @@ class PhotoController extends Controller
             'title' => 'required|string|max:255',
             'event_name' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'delete_images.*' => 'nullable|exists:photo_images,id',
         ]);
 
         $data = [
@@ -91,18 +127,45 @@ class PhotoController extends Controller
             'description' => $request->description,
         ];
 
-        if ($request->hasFile('image')) {
-            if ($photo->image_path) {
-                Storage::disk('public')->delete($photo->image_path);
-            }
-
-            $data['image_path'] = $request->file('image')->store('photos', 'public');
-        }
-
+        // Atualizar os dados básicos da foto
         $photo->update($data);
 
+        // Excluir imagens marcadas para exclusão
+        if ($request->has('delete_images')) {
+            foreach ($request->delete_images as $imageId) {
+                $photoImage = PhotoImage::find($imageId);
+                if ($photoImage) {
+                    Storage::disk('public')->delete($photoImage->image_path);
+                    $photoImage->delete();
+                }
+            }
+        }
+
+        // Adicionar novas imagens
+        if ($request->hasFile('images')) {
+            $hasPrimary = $photo->images()->where('is_primary', true)->exists();
+
+            foreach ($request->file('images') as $index => $imageFile) {
+                $imagePath = $imageFile->store('photos', 'public');
+
+                // Salvar cada nova imagem
+                $photoImage = new PhotoImage([
+                    'photo_id' => $photo->id,
+                    'image_path' => $imagePath,
+                    'is_primary' => !$hasPrimary && $index === 0, // Primeira imagem é primária apenas se não existir uma
+                ]);
+                $photoImage->save();
+
+                // Se não houver imagem primária e esta for a primeira, atualiza o campo image_path
+                if (!$hasPrimary && $index === 0) {
+                    $photo->update(['image_path' => $imagePath]);
+                    $hasPrimary = true;
+                }
+            }
+        }
+
         return redirect()->route('backoffice.admin.photos.index')
-            ->with('success', 'Photo updated successfully.');
+            ->with('success', 'Photo gallery updated successfully.');
     }
 
     /**
@@ -110,12 +173,34 @@ class PhotoController extends Controller
      */
     public function destroy(Photo $photo)
     {
+        // Excluir todas as imagens associadas
+        foreach ($photo->images as $image) {
+            Storage::disk('public')->delete($image->image_path);
+            $image->delete();
+        }
+
+        // Excluir a imagem principal se existir
         if ($photo->image_path) {
             Storage::disk('public')->delete($photo->image_path);
         }
 
         $photo->delete();
 
-        return redirect()->route('backoffice.admin.photos.index')->with('success', 'Photo deleted successfully');
+        return redirect()->route('backoffice.admin.photos.index')->with('success', 'Photo gallery deleted successfully');
+    }
+
+    public function setPrimaryImage(Request $request, Photo $photo, $imageId)
+    {
+        // Remover o status de primária de todas as imagens desta foto
+        $photo->images()->update(['is_primary' => false]);
+
+        // Definir a nova imagem primária
+        $newPrimary = PhotoImage::findOrFail($imageId);
+        $newPrimary->update(['is_primary' => true]);
+
+        // Atualizar o campo image_path da foto principal
+        $photo->update(['image_path' => $newPrimary->image_path]);
+
+        return redirect()->back()->with('success', 'Primary image updated successfully');
     }
 }

@@ -45,7 +45,6 @@ Route::get('/certification', [PagesController::class, 'showCertification'])->nam
 
 Route::get('/logo', [PagesController::class, 'showLogo'])->name('logo.show');
 
-// web.php
 
 Route::get('/lang/{locale}', function ($locale) {
     // Salve o idioma escolhido na sessão
@@ -64,7 +63,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
+    Route::delete('photos/images/{imageId}', [App\Http\Controllers\Admin\PhotoController::class, 'deleteImage'])
+        ->name('backoffice.admin.photos.images.delete');
     Route::prefix('backoffice/admin')->name('backoffice.admin.')->group(function () {
         // Rotas para Photos
         Route::resource('photos', PhotoController::class);

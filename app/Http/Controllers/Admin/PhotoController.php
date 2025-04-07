@@ -103,6 +103,7 @@ class PhotoController extends Controller
     public function edit(Photo $photo)
     {
         $categories = Category::all();
+        $photo->load('images');
         return view('backoffice.admin.photos.edit', compact('photo', 'categories'));
     }
 
@@ -116,7 +117,8 @@ class PhotoController extends Controller
             'title' => 'required|string|max:255',
             'event_name' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'gallery_images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'delete_images.*' => 'nullable|exists:photo_images,id',
         ]);
 
@@ -130,22 +132,34 @@ class PhotoController extends Controller
         // Atualizar os dados básicos da foto
         $photo->update($data);
 
-        // Excluir imagens marcadas para exclusão
-        if ($request->has('delete_images')) {
-            foreach ($request->delete_images as $imageId) {
-                $photoImage = PhotoImage::find($imageId);
-                if ($photoImage) {
-                    Storage::disk('public')->delete($photoImage->image_path);
-                    $photoImage->delete();
-                }
+        // Processar a imagem principal, se fornecida
+        if ($request->hasFile('image')) {
+            // Excluir a imagem principal antiga
+            if ($photo->image_path) {
+                Storage::disk('public')->delete($photo->image_path);
+            }
+
+            $imagePath = $request->file('image')->store('photos', 'public');
+            $photo->update(['image_path' => $imagePath]);
+
+            // Atualizar ou criar uma imagem primária na galeria
+            $primaryImage = $photo->images()->where('is_primary', true)->first();
+            if ($primaryImage) {
+                Storage::disk('public')->delete($primaryImage->image_path);
+                $primaryImage->update(['image_path' => $imagePath]);
+            } else {
+                $photo->images()->create([
+                    'image_path' => $imagePath,
+                    'is_primary' => true
+                ]);
             }
         }
 
-        // Adicionar novas imagens
-        if ($request->hasFile('images')) {
+        // Adicionar novas imagens à galeria
+        if ($request->hasFile('gallery_images')) {
             $hasPrimary = $photo->images()->where('is_primary', true)->exists();
 
-            foreach ($request->file('images') as $index => $imageFile) {
+            foreach ($request->file('gallery_images') as $index => $imageFile) {
                 $imagePath = $imageFile->store('photos', 'public');
 
                 // Salvar cada nova imagem
@@ -202,5 +216,36 @@ class PhotoController extends Controller
         $photo->update(['image_path' => $newPrimary->image_path]);
 
         return redirect()->back()->with('success', 'Primary image updated successfully');
+    }
+
+    public function deleteImage($imageId)
+    {
+        $image = PhotoImage::findOrFail($imageId);
+        $photoId = $image->photo_id;
+        $photo = Photo::findOrFail($photoId);
+
+        // Verificar se é a imagem primária
+        $isPrimary = $image->is_primary;
+
+        // Excluir a imagem do armazenamento
+        Storage::disk('public')->delete($image->image_path);
+
+        // Excluir o registro do banco de dados
+        $image->delete();
+
+        // Se era a imagem primária, definir outra como primária
+        if ($isPrimary) {
+            $newPrimary = $photo->images()->first();
+            if ($newPrimary) {
+                $newPrimary->update(['is_primary' => true]);
+                $photo->update(['image_path' => $newPrimary->image_path]);
+            } else {
+                // Se não houver mais imagens, limpar o image_path
+                $photo->update(['image_path' => null]);
+            }
+        }
+
+        return redirect()->route('backoffice.admin.photos.edit', $photoId)
+            ->with('success', 'Image deleted successfully');
     }
 }

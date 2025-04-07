@@ -11,7 +11,18 @@ class WorkoutController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $photos = Photo::with('category')->get();
+
+        // Buscar a categoria Treino
+        $treinoCategory = Category::where('name', 'Treinos')->first();
+
+        // Se a categoria existir, buscar apenas as fotos dessa categoria
+        if ($treinoCategory) {
+            $photos = Photo::with('category', 'images')
+                ->where('category_id', $treinoCategory->id)
+                ->get();
+        } else {
+            $photos = collect(); // Coleção vazia se não existir a categoria
+        }
 
         return view('layouts.workout', compact('categories', 'photos'));
     }

@@ -9,8 +9,8 @@
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                                                                        Start Banner
-                                                                                                                                                                                                                                                                                                                                                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                Start Banner
+                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <section class="banner-section banner-section-two inner-banner-section bg-overlay-red bg_img"
         data-background="{{ asset('assets/images/spacesamurai.jpg') }}">
         <div class="section-logo-text">
@@ -26,13 +26,13 @@
         </nav>
     </div>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                                                                        End Banner
-                                                                                                                                                                                                                                                                                                                                                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                End Banner
+                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                                                                        Start Scroll-To-Top
-                                                                                                                                                                                                                                                                                                                                                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                Start Scroll-To-Top
+                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <a href="#" class="scrollToTop">
         <img loading="lazy" src="{{ asset('assets/images/logowhite.png') }}" alt="element">
         <div class="scrollToTop-icon">
@@ -40,13 +40,13 @@
         </div>
     </a>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                                                                        End Scroll-To-Top
-                                                                                                                                                                                                                                                                                                                                                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                End Scroll-To-Top
+                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                                                                        Start Gallery
-                                                                                                                                                                                                                                                                                                                                                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                Start Gallery
+                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <section class="gallery-section ptb-120">
         <div class="container-fluid p-0">
             <div class="row justify-content-center">
@@ -86,16 +86,16 @@
                 <div class="button-group filter-btn-group">
                     <button class="active" data-filter="*">{{ __('messages.workout.all') }}</button>
                     @php
-                        $uniqueEvents = $photos->pluck('event_name')->unique();
+                        $uniqueEvents = $photos->where('category.name', 'Treinos')->pluck('event_name')->unique();
                     @endphp
                     @foreach ($uniqueEvents as $eventName)
                         <button data-filter=".event-{{ Str::slug($eventName) }}">{{ $eventName }}</button>
                     @endforeach
                 </div>
                 <div class="grid">
-                    @foreach ($photos as $photo)
+                    @foreach ($photos->where('category.name', 'Treinos') as $photo)
                         @foreach ($photo->images as $image)
-                            <div class="grid-item event-{{ Str::slug($photo->event_name) }} workout">
+                            <div class="grid-item event-{{ Str::slug($photo->event_name) }} trainer">
                                 <div class="gallery-item">
                                     <div class="gallery-thumb">
                                         <img loading="lazy" src="{{ asset('storage/' . $image->image_path) }}"
@@ -103,6 +103,7 @@
                                         <div class="gallery-overlay">
                                             <div class="gallery-content">
                                                 <h4 class="title">{{ $photo->title }}</h4>
+                                                <p>{{ $photo->event_name }}</p>
                                                 <div class="gallery-icon">
                                                     <a class="img-popup" data-rel="lightcase:myCollection"
                                                         href="{{ asset('storage/' . $image->image_path) }}">
@@ -138,8 +139,8 @@
         </div>
     </section>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                                                                                                                                                                                                                                                                                                                        End Gallery
-                                                                                                                                                                                                                                                                                                                                                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                                                                                                                                                                                                                                                                                                                                                                End Gallery
+                                                                                                                                                                                                                                                                                                                                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
 

@@ -35,7 +35,7 @@ Route::get('/wjjc', [PagesController::class, 'showWJJC'])->name('wjjc.show');
 
 Route::get('/wjjcportugal', [PagesController::class, 'showWJJCPT'])->name('wjjcpt.show');
 
-Route::get('/events', [PagesController::class, 'showEvents'])->name('event.show');
+Route::get('/events', [App\Http\Controllers\EventsController::class, 'index'])->name('event.show');
 
 Route::get('/wjjcgallery', [PagesController::class, 'showWjjcGallery'])->name('wjjcgallery.show');
 

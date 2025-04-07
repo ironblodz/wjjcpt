@@ -110,76 +110,96 @@ class PhotoController extends Controller
     /**
      * Update the specified resource in storage.
      */
+    /**
+     * Update the specified resource in storage.
+     */
     public function update(Request $request, Photo $photo)
     {
-        $request->validate([
-            'category_id' => 'required|exists:categories,id',
-            'title' => 'required|string|max:255',
-            'event_name' => 'required|string|max:255',
-            'description' => 'nullable|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'gallery_images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'delete_images.*' => 'nullable|exists:photo_images,id',
-        ]);
+        try {
+            // Log para verificar se o método está sendo chamado
+            \Illuminate\Support\Facades\Log::info('Update method called for photo ID: ' . $photo->id);
+            \Illuminate\Support\Facades\Log::info('Request data:', $request->all());
 
-        $data = [
-            'category_id' => $request->category_id,
-            'title' => $request->title,
-            'event_name' => $request->event_name,
-            'description' => $request->description,
-        ];
+            $request->validate([
+                'category_id' => 'required|exists:categories,id',
+                'title' => 'required|string|max:255',
+                'event_name' => 'required|string|max:255',
+                'description' => 'nullable|string',
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'gallery_images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'delete_images.*' => 'nullable|exists:photo_images,id',
+            ]);
 
-        // Atualizar os dados básicos da foto
-        $photo->update($data);
+            // Log após validação
+            \Illuminate\Support\Facades\Log::info('Validation passed');
 
-        // Processar a imagem principal, se fornecida
-        if ($request->hasFile('image')) {
-            // Excluir a imagem principal antiga
-            if ($photo->image_path) {
-                Storage::disk('public')->delete($photo->image_path);
-            }
+            $data = [
+                'category_id' => $request->category_id,
+                'title' => $request->title,
+                'event_name' => $request->event_name,
+                'description' => $request->description,
+            ];
 
-            $imagePath = $request->file('image')->store('photos', 'public');
-            $photo->update(['image_path' => $imagePath]);
+            // Atualizar os dados básicos da foto
+            $photo->update($data);
+            \Illuminate\Support\Facades\Log::info('Basic photo data updated');
 
-            // Atualizar ou criar uma imagem primária na galeria
-            $primaryImage = $photo->images()->where('is_primary', true)->first();
-            if ($primaryImage) {
-                Storage::disk('public')->delete($primaryImage->image_path);
-                $primaryImage->update(['image_path' => $imagePath]);
-            } else {
-                $photo->images()->create([
-                    'image_path' => $imagePath,
-                    'is_primary' => true
-                ]);
-            }
-        }
+            // Resto do código permanece o mesmo...
 
-        // Adicionar novas imagens à galeria
-        if ($request->hasFile('gallery_images')) {
-            $hasPrimary = $photo->images()->where('is_primary', true)->exists();
+            // Processar a imagem principal, se fornecida
+            if ($request->hasFile('image')) {
+                // Excluir a imagem principal antiga
+                if ($photo->image_path) {
+                    Storage::disk('public')->delete($photo->image_path);
+                }
 
-            foreach ($request->file('gallery_images') as $index => $imageFile) {
-                $imagePath = $imageFile->store('photos', 'public');
+                $imagePath = $request->file('image')->store('photos', 'public');
+                $photo->update(['image_path' => $imagePath]);
 
-                // Salvar cada nova imagem
-                $photoImage = new PhotoImage([
-                    'photo_id' => $photo->id,
-                    'image_path' => $imagePath,
-                    'is_primary' => !$hasPrimary && $index === 0, // Primeira imagem é primária apenas se não existir uma
-                ]);
-                $photoImage->save();
-
-                // Se não houver imagem primária e esta for a primeira, atualiza o campo image_path
-                if (!$hasPrimary && $index === 0) {
-                    $photo->update(['image_path' => $imagePath]);
-                    $hasPrimary = true;
+                // Atualizar ou criar uma imagem primária na galeria
+                $primaryImage = $photo->images()->where('is_primary', true)->first();
+                if ($primaryImage) {
+                    Storage::disk('public')->delete($primaryImage->image_path);
+                    $primaryImage->update(['image_path' => $imagePath]);
+                } else {
+                    $photo->images()->create([
+                        'image_path' => $imagePath,
+                        'is_primary' => true
+                    ]);
                 }
             }
-        }
 
-        return redirect()->route('backoffice.admin.photos.index')
-            ->with('success', 'Photo gallery updated successfully.');
+            // Adicionar novas imagens à galeria
+            if ($request->hasFile('gallery_images')) {
+                $hasPrimary = $photo->images()->where('is_primary', true)->exists();
+
+                foreach ($request->file('gallery_images') as $index => $imageFile) {
+                    $imagePath = $imageFile->store('photos', 'public');
+
+                    // Salvar cada nova imagem
+                    $photoImage = new PhotoImage([
+                        'photo_id' => $photo->id,
+                        'image_path' => $imagePath,
+                        'is_primary' => !$hasPrimary && $index === 0, // Primeira imagem é primária apenas se não existir uma
+                    ]);
+                    $photoImage->save();
+
+                    // Se não houver imagem primária e esta for a primeira, atualiza o campo image_path
+                    if (!$hasPrimary && $index === 0) {
+                        $photo->update(['image_path' => $imagePath]);
+                        $hasPrimary = true;
+                    }
+                }
+            }
+
+            \Illuminate\Support\Facades\Log::info('Update completed, redirecting to index');
+            return redirect()->route('backoffice.admin.photos.index')
+                ->with('success', 'Photo gallery updated successfully.');
+        } catch (\Exception $e) {
+            \Illuminate\Support\Facades\Log::error('Error in update method: ' . $e->getMessage());
+            \Illuminate\Support\Facades\Log::error('Stack trace: ' . $e->getTraceAsString());
+            return redirect()->back()->with('error', 'An error occurred: ' . $e->getMessage())->withInput();
+        }
     }
 
     /**

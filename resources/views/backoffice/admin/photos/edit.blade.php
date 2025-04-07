@@ -14,6 +14,16 @@
                             class="max-w-md h-auto rounded">
                     </div>
 
+                    <div class="mb-4">
+                        <label for="image" class="block text-sm font-medium text-gray-700">Image (leave empty to
+                            keep current image)</label>
+                        <input type="file"
+                            class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                            id="image" name="image">
+                        @error('image')
+                            <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                        @enderror
+                    </div>
                     <form action="{{ route('backoffice.admin.photos.update', $photo) }}" method="POST"
                         enctype="multipart/form-data">
                         @csrf
@@ -68,17 +78,13 @@
                         <!-- Galeria de imagens existentes -->
                         <div class="mb-4">
                             <label class="block text-sm font-medium text-gray-700 mb-2">Current Gallery</label>
-                            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="gallery-container">
                                 @foreach ($photo->images as $image)
                                     <div class="relative group">
                                         <img src="{{ asset('storage/' . $image->image_path) }}" alt="Gallery image"
                                             class="h-40 w-full object-cover rounded">
                                         <div
                                             class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-                                            <!-- Replace your current delete link (which might look like this) -->
-                                            <!-- <a href="{{ route('backoffice.admin.photos.images.delete', $image->id) }}" class="..."> -->
-
-                                            <!-- With this form -->
                                             <form method="POST"
                                                 action="{{ route('backoffice.admin.photos.images.delete', $image->id) }}"
                                                 style="display: inline;">
@@ -97,6 +103,8 @@
                                         </div>
                                     </div>
                                 @endforeach
+                                <!-- New images will be previewed here -->
+                                <div id="image-previews"></div>
                             </div>
                         </div>
 
@@ -106,24 +114,13 @@
                                 to Gallery</label>
                             <input type="file"
                                 class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
-                                id="gallery_images" name="gallery_images[]" multiple>
+                                id="gallery_images" name="gallery_images[]" multiple onchange="previewImages(this)">
                             <p class="mt-1 text-sm text-gray-500">You can select multiple images to add to the gallery
                             </p>
                             @error('gallery_images')
                                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                             @enderror
                             @error('gallery_images.*')
-                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-
-                        <div class="mb-4">
-                            <label for="image" class="block text-sm font-medium text-gray-700">Image (leave empty to
-                                keep current image)</label>
-                            <input type="file"
-                                class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
-                                id="image" name="image">
-                            @error('image')
                                 <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                             @enderror
                         </div>
@@ -139,4 +136,78 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function previewImages(input) {
+            // Remove any previous previews that have the 'new-preview' class
+            const existingPreviews = document.querySelectorAll('.new-preview');
+            existingPreviews.forEach(preview => preview.remove());
+
+            const galleryContainer = document.getElementById('gallery-container');
+
+            if (input.files) {
+                Array.from(input.files).forEach((file, index) => {
+                    const reader = new FileReader();
+
+                    reader.onload = function(e) {
+                        const previewDiv = document.createElement('div');
+                        previewDiv.className = 'relative group new-preview';
+                        previewDiv.dataset.index = index;
+
+                        const img = document.createElement('img');
+                        img.src = e.target.result;
+                        img.alt = 'New gallery image';
+                        img.className = 'h-40 w-full object-cover rounded';
+
+                        const overlayDiv = document.createElement('div');
+                        overlayDiv.className =
+                            'absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity';
+
+                        const newLabel = document.createElement('span');
+                        newLabel.className = 'text-white bg-green-500 px-2 py-1 rounded text-xs mr-2';
+                        newLabel.textContent = 'New';
+
+                        const deleteButton = document.createElement('button');
+                        deleteButton.className = 'text-white bg-red-500 p-2 rounded-full ml-2';
+                        deleteButton.type = 'button';
+                        deleteButton.onclick = function() {
+                            previewDiv.remove();
+
+                            // Create a new FileList without the removed file
+                            // Note: We can't directly modify the input.files FileList
+                            // This is a visual-only removal
+                            console.log(`Removed preview for image ${index}`);
+                        };
+
+                        // Add delete icon
+                        const svgIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                        svgIcon.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+                        svgIcon.setAttribute('class', 'h-5 w-5');
+                        svgIcon.setAttribute('fill', 'none');
+                        svgIcon.setAttribute('viewBox', '0 0 24 24');
+                        svgIcon.setAttribute('stroke', 'currentColor');
+
+                        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                        path.setAttribute('stroke-linecap', 'round');
+                        path.setAttribute('stroke-linejoin', 'round');
+                        path.setAttribute('stroke-width', '2');
+                        path.setAttribute('d',
+                            'M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16'
+                            );
+
+                        svgIcon.appendChild(path);
+                        deleteButton.appendChild(svgIcon);
+
+                        overlayDiv.appendChild(newLabel);
+                        overlayDiv.appendChild(deleteButton);
+                        previewDiv.appendChild(img);
+                        previewDiv.appendChild(overlayDiv);
+                        galleryContainer.appendChild(previewDiv);
+                    }
+
+                    reader.readAsDataURL(file);
+                });
+            }
+        }
+    </script>
 </x-app-layout>

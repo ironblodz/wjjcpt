@@ -294,7 +294,7 @@ return [
         'information' => ' informação ',
         'email' => 'Enviar E-mail',
         'art' => 'A arte suave é sobre suavidade e flexibilidade, não força bruta.',
-        'address' => 'Morada',
+        'address' => 'Morada Sede',
         'watchmap' => 'ver mapa',
         'mail' => 'Enviar mail',
         'sendnow' => 'enviar agora',

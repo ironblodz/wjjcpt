@@ -144,7 +144,7 @@ W.T.M.A.S. (World Traditional Martial Arts Society)
                 '2014' => 'Since 2014, he has been the instructor and technical leader of the Nihon Seishin Dojo in
 Penela, where he continues to develop his passion for the martial arts. He is currently
 involved in the disciplines of Kishido Ju-Jitsu from the World Ju-Jitsu Corporation (Italy),
-Kyoo Soku - Self Defense from Kyoo Soku Portugal, Kodokan Judo from the Portuguese
+Kodokan Judo from the Portuguese
 Judo Federation and Mugai Ryu Iaido/Hachiman Ryu Battojutsu from Ken Shin Kan
 Portugal',
                 'objective' => 'In addition to martial and sporting practice, his goal is to awaken passion and

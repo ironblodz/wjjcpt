@@ -159,8 +159,8 @@ return [
         'sensei' => 'Sobre o Sensei',
         '2014' => 'Desde 2014 que é o treinador e responsável técnico do Nihon Seishin Dojo em Penela, onde continua a
                     desenvolver a sua paixão pelas artes marcais, estando ​atualmente ligado ás disciplinas do Kishido
-                    Ju-Jitsu da World Ju-Jitsu Corporation (Itália), o Kyoo Soku - Defesa Pessoal da Kyoo Soku Portugal, o
-                    Kodokan Judo​ da FPJ e Mugairyu Iaido/Hachiman ryu Battojutsu da Ken Shin Kan Portugal',
+                    Ju-Jitsu da World Ju-Jitsu Corporation (Itália), o
+                    Kodokan Judo​ da Federação Portugues de Judo e Mugairyu Iaido/Hachiman ryu Battojutsu da Ken Shin Kan Portugal',
         'objective' => 'O seu grande objectivo além da pratica marcial e desportiva é conseguir despertar, em todos os que o
                     procuram, a paixão. o interesse no estudo e prática destas ​disciplinas conseguindo assim uma
                     transmissão de valores éticos que influenciem positivamente as suas vidas independentemente da sua

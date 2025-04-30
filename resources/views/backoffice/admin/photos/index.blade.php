@@ -11,7 +11,7 @@
                 <div class="p-6 text-gray-900">
                     <div class="mb-4">
                         <a href="{{ route('backoffice.admin.photos.create') }}"
-                            class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Add New Photo</a>
+                            class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Add New Event</a>
                     </div>
 
                     <div class="overflow-x-auto">

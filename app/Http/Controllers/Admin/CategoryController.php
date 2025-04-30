@@ -67,16 +67,26 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
+        // Log para depuração
+        \Illuminate\Support\Facades\Log::info('Update method called for category: ' . $category->id);
+        \Illuminate\Support\Facades\Log::info('Request data:', $request->all());
+
         $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
         ]);
+
+        // Log após validação
+        \Illuminate\Support\Facades\Log::info('Validation passed');
 
         $category->update([
             'name' => $request->name,
             'slug' => Str::slug($request->name),
             'description' => $request->description,
         ]);
+
+        // Log após atualização
+        \Illuminate\Support\Facades\Log::info('Category updated successfully');
 
         return redirect()->route('backoffice.admin.categories.index')
             ->with('success', 'Category updated successfully.');

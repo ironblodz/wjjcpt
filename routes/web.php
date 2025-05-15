@@ -37,6 +37,8 @@ Route::get('/wjjcportugal', [PagesController::class, 'showWJJCPT'])->name('wjjcp
 
 Route::get('/events', [App\Http\Controllers\EventsController::class, 'index'])->name('event.show');
 
+Route::get('/competition', [App\Http\Controllers\CompetitionController::class, 'index'])->name('competition.show');
+
 Route::get('/wjjcgallery', [PagesController::class, 'showWjjcGallery'])->name('wjjcgallery.show');
 
 Route::get('/workout', [App\Http\Controllers\WorkoutController::class, 'index'])->name('workout.show');
@@ -63,13 +65,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::delete('photos/images/{imageId}', [App\Http\Controllers\Admin\PhotoController::class, 'deleteImage'])
-        ->name('backoffice.admin.photos.images.delete');
     Route::prefix('backoffice/admin')->name('backoffice.admin.')->group(function () {
         // Rotas para Photos
         Route::resource('photos', PhotoController::class);
         // Rotas para Categories
         Route::resource('categories', CategoryController::class);
+        // Rota para deletar imagens
+        Route::delete('photos/images/{imageId}', [App\Http\Controllers\Admin\PhotoController::class, 'deleteImage'])
+            ->name('photos.images.delete');
     });
 });
 require __DIR__ . '/auth.php';

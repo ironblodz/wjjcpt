@@ -191,7 +191,7 @@
                                             <li><a
                                                     href="{{ route('workout.show') }}">{{ __('messages.navbar.training') }}</a>
                                             </li>
-                                            <li><a href="#">{{ __('messages.navbar.competion') }}</a></li>
+                                            <li><a href="{{ route('competition.show') }}">{{ __('messages.navbar.competion') }}</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="{{ route('contact.show') }}">{{ __('messages.navbar.contact') }}</a>

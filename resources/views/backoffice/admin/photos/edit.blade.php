@@ -213,8 +213,8 @@
             if (confirm('Are you sure you want to delete this image?')) {
                 const imageId = button.dataset.imageId;
                 const imageContainer = button.closest('.relative.group');
-                
-                fetch(`/backoffice/admin/photos/images/${imageId}`, {
+
+                fetch(`{{ route('backoffice.admin.photos.images.delete', '') }}/${imageId}`, {
                     method: 'DELETE',
                     headers: {
                         'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,

@@ -45,7 +45,7 @@
                 <div class="col-xl-12">
                     <div class="training-item">
                         <div class="training-thumb">
-                            <img loading="lazy" src="assets/images/kishido.jpg" alt="bg">
+                            <img loading="lazy" src="assets/images/workout/kishido1.png" alt="bg">
                         </div>
                         <div class="training-content">
                             <div class="training-content-header">

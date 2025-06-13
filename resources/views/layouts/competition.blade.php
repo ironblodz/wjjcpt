@@ -21,7 +21,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">WJJC</a></li>
-                <li class="breadcrumb-item active" aria-current="page">{{ __('messages.events.event') }}</li>
+                <li class="breadcrumb-item active" aria-current="page">Competições</li>
             </ol>
         </nav>
     </div>
@@ -53,7 +53,7 @@
                 <div class="col-xl-4 col-lg-8 col-md-6 col-sm-8 text-center">
                     <div class="section-header" data-aos="fade-up" data-aos-duration="1200">
                         <h2 class="section-title">
-                            {{ __('messages.events.gallery') }} <span> {{ __('messages.events.event') }}</span></h2>
+                            Galeria de <span> Competições</span></h2>
                     </div>
                 </div>
             </div>

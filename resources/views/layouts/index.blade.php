@@ -272,7 +272,7 @@
                             <div class="blog-thumb">
                                 <img loading="lazy" src="{{ asset('assets/images/blog/new3.jpg') }}" alt="blog">
                                 <div class="blog-date">
-                                    <span>{{ __('messages.index.Julho') }} 25-26, 2024</span>
+                                    <span>25-26, 2024</span>
                                 </div>
                             </div>
                             <div class="blog-content">
@@ -284,6 +284,46 @@
                                         href="{{ route('event.show') }}">{{ __('messages.index.masterclass') }}</a>
                                 </h3>
                                 <p>{{ __('messages.index.blackbelts') }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-30">
+                        <div class="blog-item" data-aos="zoom-in" data-aos-duration="1200">
+                            <div class="blog-thumb">
+                                <img loading="lazy" src="{{ asset('assets/images/defesa_pessoal_feminina.jpeg') }}" alt="blog">
+                                <div class="blog-date">
+                                    <span>08 Março 2025</span>
+                                </div>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-post-meta">
+                                    <span class="user">BY: WJJC PORTUGAL</span>
+                                    <span class="category"><a href="#">JU-JITSU</a></span>
+                                </div>
+                                <h3 class="title"><a href="#">Workshop Defesa Pessoal Feminina 2024 </a></h3>
+                                <p>
+                                    A WJJC Portugal e FJJDAP organizam Workshop de Defesa Pessoal Feminina no âmbito da comemoração do Dia Internacional da eliminação da violência contra as Mulheres
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-30">
+                        <div class="blog-item" data-aos="zoom-in" data-aos-duration="1200">
+                            <div class="blog-thumb">
+                                <img loading="lazy" src="{{ asset('assets/images/jujitsu_all.jpeg') }}" alt="blog">
+                                <div class="blog-date">
+                                    <span>23 Novembro 2025</span>
+                                </div>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-post-meta">
+                                    <span class="user">BY: WJJC PORTUGAL</span>
+                                    <span class="category"><a href="#">JU-JITSU</a></span>
+                                </div>
+                                <h3 class="title"><a href="#">Workshop Defesa Pessoal Feminina 2025 </a></h3>
+                                <p>
+                                    A WJJC Portugal e FJJDAP organizam Workshop de Defesa Pessoal Feminina no âmbito da celebração do Dia Internacional da Mulher
+                                </p>
                             </div>
                         </div>
                     </div>
